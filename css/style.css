@@ -1,0 +1,9 @@
+.navbar-brand {
+  font-size: 4vmin;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #CCC;
+}
