@@ -1,17 +1,87 @@
+/* - - - - - - - - - - - - - - - - */
+/* General and Generic definitions */
+/* - - - - - - - - - - - - - - - - */
+* {
+  font-family: Comic Sans MS;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 
+h1 {
+  margin: 0;
+  font-size: 6vmin;
+}
+
+/* - - - - - - - - - - - - - - - */
+/* - - - Class Definitions - - - */
+/* - - - - - - - - - - - - - - - */
+
+/*  */
 .navbar-brand {
-  font-size: 4vmin;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .page-container {
   background-color: #FFF;
+  padding: 20px;
 }
 
+.copyright {
+  color: #DDD;
+  font-size: 1.4vmax;
+  display: block;
+  width: 100%
+}
+
+a.brand-name {
+  text-decoration: none;
+}
+
+.menu {
+  transition: all .5s ease-in-out;
+  transform: translateX(-100%);
+  background-color: #000;
+  position: fixed;
+  z-index: 1;
+  color: #FFF;
+  width: 25%;
+  float: left;
+  top: 0;
+  height: 100%;
+  padding: 8px;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-mb-button {
+  background-color: #000;
+  color: #FFF;
+}
+
+.menu-open {
+  transition: all .5s ease-in-out;
+  transform: translateX(0);
+}
+
+.page-container-menu {
+  transition: all .5s ease-in-out !important;
+  transform: translateX(25%)!important;
+}
+
+/* - - - - - - - - - - - - - - - */
+/* - - - ID's definitions- - - - */
+/* - - - - - - - - - - - - - - - */
 #footer-container {
   background-color: #111;
   position: fixed;
@@ -30,7 +100,14 @@ html, body {
   height: auto;
 }
 
-.copyright {
-  color: #DDD;
-  font-size: 1.4vmax;
+#pageContainer {
+  transition: all .5s ease-in-out;
+  transform: translateX(0);
+}
+
+#navbar {
+  position: relative;
+  margin: 0;
+  height: auto;
+  padding: 16px;
 }

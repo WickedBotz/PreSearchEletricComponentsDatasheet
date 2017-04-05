@@ -13,3 +13,8 @@ window.onload = function() {
 window.resize = function() {
   pageFix.adjustContentMargin();
 }
+
+/* Menu mobile interaction - Menu Toggle */
+$('#menu-mb-button').click(function() {
+  menuMb.toggleMenu(this)
+});

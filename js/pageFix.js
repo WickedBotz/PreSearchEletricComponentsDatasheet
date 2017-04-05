@@ -8,12 +8,15 @@
 //  the page more interactive and responsive
 var pageFix = {
 
-  /* pageFix.adjustContentMargin(): Adjust the margin of page container. This is the
-     margin that allows footer to be viewed
+  /*  pageFix.adjustContentMargin():
+
+      Description: Adjust the margin of page container. This is the
+      margin that allows footer to be viewed
 
      - var pageContainer: Page container reference, that include all middle page content.
      - var footerContainer: footer container reference, that contains all footer content.
      - var height: get the footer container height to set this value as page container margin.
+     
   */
   adjustContentMargin : function() {
     var pageContainer = document.getElementById('pageContainer');
