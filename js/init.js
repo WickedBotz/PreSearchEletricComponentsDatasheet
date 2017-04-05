@@ -4,10 +4,12 @@
   executed or called on html. This will need all script dependences.
 */
 
+/* Margin definitions before page loads */
 window.onload = function() {
   pageFix.adjustContentMargin();
 };
 
+/* Margin definitions while page resize */
 window.resize = function() {
   pageFix.adjustContentMargin();
 }
