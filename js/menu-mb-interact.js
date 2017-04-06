@@ -1,5 +1,5 @@
 /*
-  This file have all functions that manipule menu mobile
+  This file contains all functions that manipule menu mobile
 */
 
 var menuMb = {
@@ -7,18 +7,20 @@ var menuMb = {
   toggleMenu : function(button) {
 
     var menu = document.getElementById('menuMb');
-    var menuBtn = document.getElementById('buttonFa');
+    var menuBtn = document.getElementById('menu-mb-button');
+    var menuBtnIcon = document.getElementById('buttonFa');
 
     $(menu).toggleClass('menu-open');
     $(menuBtn).toggleClass('menu-mb-button-open');
 
-    if ($(menuBtn).hasClass('fa-bars')) {
-      $(menuBtn).removeClass('fa-bars').addClass('fa-times');
+    if ($(menuBtnIcon).hasClass('fa-bars')) {
+      fadeThings.fadeElementOut('.brand-name', 432, 500);
     } else {
-      $(menuBtn).removeClass('fa-times').addClass('fa-bars');
+      fadeThings.fadeElementIn('.brand-name', 432, 500);
     }
 
-  }
+    changeThings.changeIcon(menuBtnIcon, 'fa-bars', 'fa-times');
 
+  }
 
 }
