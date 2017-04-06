@@ -8,7 +8,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  /*height: 100%;*/
   overflow-x: hidden;
 }
 
@@ -41,7 +41,7 @@ a.brand-name {
 
 .nav-container {
   width: 100%;
-  height: 60px;
+  height: 40px;
   margin: 0;
   padding: 0;
 }
@@ -57,36 +57,54 @@ a.brand-name {
 }
 
 .nav-bar {
-  background: #ccc;
+  background: #FFF;
   padding: 4px;
   width: 100%;
   height: 100%;
+}
+
+.fixed {
+  position: fixed ;
+}
+
+.menu-mb-section-container {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.menu-mb-section-container::-webkit-scrollbar {
+  display: none;
+}
+
+div.custom-hr {
+  height: 0;
+  border: solid 2px #000;
+  width: 90%;
+  border-radius: 10px;
+}
+
+div.custom-hr-fluid {
+  height: 0;
+  border: solid 2px #FFF;
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* - - - Menu Mobile - - - */
 .menu {
   transition: all .5s ease-in-out;
   transform: translateX(-100%);
-  background-color: #CCC;
+  background-color: #FFF;
+  box-shadow: 2px 0 5px #000;
   position: fixed;
   z-index: 1;
-  color: #FFF;
   width: 200px;
   float: left;
   top: 0;
   height: 100%;
-  padding: 8px;
-  margin: 0;
-}
-
-p {
   padding: 0;
   margin: 0;
-}
-
-.menu-mb-button {
-  background-color: #000;
-  color: #FFF;
 }
 
 .menu-open {
@@ -94,10 +112,21 @@ p {
   transform: translateX(0);
 }
 
-.page-container-menu {
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-mb-button-open {
   transition: all .5s ease-in-out;
-  /*transform: translateX(200px)!important;*/
-  margin-left: 200px !important;
+  transform: translateX(200px);
+}
+
+.menu-mb-header {
+  position: relative;
+  text-align: center;
+  padding-top: calc(20px / 2);
+
 }
 
 .fa-3 {
@@ -112,21 +141,31 @@ p {
 
 /* - - - Menu Mobile - - - */
 
+#buttonFa {
+  margin: 8px;
+}
+
 #menu-mb-button {
-  transition: all .2s ease-in-out;
-  height: 100%;
+  transition: all .5s ease-in-out;
   width: auto;
   border: none;
   background: none;
   color: #111;
   outline: none;
+  border-radius: 4px;
 }
 
 #menu-mb-button:hover {
   transition: all .2s ease-in-out;
-  color: #900;
+  color: rgb(0, 0, 200);
 }
 /* - - - Menu Mobile - - - */
+
+/* - - - - Nav Bar - - - - */
+#navContainer {
+  box-shadow: 0 0 5px 0 #000;
+}
+/* - - - - Nav Bar - - - - */
 
 /* - - - Footer - - - */
 #footer-container {
@@ -143,6 +182,11 @@ p {
 /* - - - Footer - - - */
 
 /* - - - page container - - - */
+
+/* Text Container */
+#pageTextContainer {
+  margin-top: 100px;
+}
 
 /* Main Container */
 #pageContainer {

@@ -7,13 +7,10 @@ var menuMb = {
   toggleMenu : function(button) {
 
     var menu = document.getElementById('menuMb');
-    var pageContainer = document.getElementById('pageContainer');
-    var pageFooter = document.getElementById('footer-container');
     var menuBtn = document.getElementById('buttonFa');
 
     $(menu).toggleClass('menu-open');
-    $(pageContainer).toggleClass('page-container-menu');
-    $(pageFooter).toggleClass('page-container-menu');
+    $(menuBtn).toggleClass('menu-mb-button-open');
 
     if ($(menuBtn).hasClass('fa-bars')) {
       $(menuBtn).removeClass('fa-bars').addClass('fa-times');
