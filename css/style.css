@@ -17,6 +17,11 @@ h1 {
   font-size: 6vmin;
 }
 
+code {
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
 /* - - - - - - - - - - - - - - - - - */
 /* - - - Tag+Class Definitions - - - */
 /* - - - - - - - - - - - - - - - - - */
@@ -96,6 +101,7 @@ div.custom-hr-fluid {
   font-size: 3vmax;
   border-bottom: solid 2px #111;
   display: inline;
+  height: auto;
 }
 
 .text-title-container {
@@ -117,6 +123,15 @@ div.custom-hr-fluid {
 
 .text-container {
   padding: 20px;
+}
+
+.figure {
+  padding: 40px;
+}
+
+.code-hidden {
+  transition: all .3s ease-in-out;
+  display: none;
 }
 
 /* - - - - Nav Bar - - - - */
@@ -304,6 +319,7 @@ div.custom-hr-fluid {
   cursor: default;
   padding: 0;
   margin: 0;
+  height: auto;
 }
 /* - - - page container - - - */
 #navbar {

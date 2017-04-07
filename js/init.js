@@ -32,5 +32,5 @@ $('#closeButtom').click(function() {
 
 /* Navbar scroll interaction */
 $(window).scroll(function() {
-  fadeThings.navbarFadeInOut('navContainer');
+  toggleThings.navbarFadeInOut('navContainer');
 });
