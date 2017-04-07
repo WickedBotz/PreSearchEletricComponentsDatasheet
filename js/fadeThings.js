@@ -34,5 +34,38 @@ var fadeThings = {
       $(elementLabel).fadeOut(interval);
     }
 
+  },
+
+  navbarFadeInOut: function(navbarId) {
+
+    var currentScroll = window.pageYOffset;
+
+    if (navbarId.charAt(0) === '#') {
+
+      if (lastScrollValue >= currentScroll) {
+        $(navbarId).removeClass('nav-bar-offpage');
+
+      } else {
+        $(navbarId).addClass('nav-bar-offpage');
+
+      }
+
+    } else {
+      var navbar = document.getElementById(navbarId);
+
+      if (lastScrollValue >= currentScroll) {
+        $(navbar).removeClass('nav-bar-offpage');
+
+      } else {
+        $(navbar).addClass('nav-bar-offpage');
+
+      }
+
+    }
+
+    lastScrollValue = currentScroll;
+
   }
+
+
 }

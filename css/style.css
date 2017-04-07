@@ -21,13 +21,6 @@ h1 {
 /* - - - Class Definitions - - - */
 /* - - - - - - - - - - - - - - - */
 
-/* Page logo definitions */
-.navbar-brand {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 /* Footer copyrights definitions */
 .copyright {
   color: #DDD;
@@ -41,14 +34,8 @@ h1 {
   position: relative;
   display: inline;
   right: 0;
-  top: 25%;
-}
-
-.nav-container {
-  width: 100%;
-  height: 40px;
-  margin: 0;
-  padding: 0;
+  top: 22.5%;
+  margin-right: 25px;
 }
 
 .logo-img {
@@ -58,13 +45,6 @@ h1 {
 }
 
 .logo-img img {
-  height: 100%;
-}
-
-.nav-bar {
-  background: #FFF;
-  padding: 4px;
-  width: 100%;
   height: 100%;
 }
 
@@ -86,6 +66,40 @@ div.custom-hr-fluid {
   border-radius: 10px;
 }
 
+/* - - - - Nav Bar - - - - */
+
+/* Page logo definitions */
+.navbar-brand {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-container {
+  transform: translateY(0);
+  transition: all .5s ease-in-out;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  z-index: 1;
+}
+
+.nav-bar {
+  padding: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar-offpage {
+  transform: translateY(-100%);
+  transition: all .5s ease-in-out;
+}
+
+/* - - - - Nav Bar - - - - */
+
 /* - - - Menu Mobile - - - */
 .menu {
   transition: all .5s ease-in-out;
@@ -93,8 +107,7 @@ div.custom-hr-fluid {
   background-color: #FFF;
   box-shadow: 2px 0 5px #000;
   position: fixed;
-  z-index: 1;
-  width: 200px;
+  z-index: 2;
   float: left;
   top: 0;
   height: 100%;
@@ -125,8 +138,12 @@ div.custom-hr-fluid {
 .menu-mb-header {
   position: relative;
   text-align: center;
-  padding-top: calc(20px / 2);
+}
 
+.menu-mb-title {
+  display: block;
+  padding-top: calc(20px / 2);
+  font-weight: bold;
 }
 
 .fa-3 {
@@ -146,7 +163,7 @@ div.custom-hr-fluid {
 }
 
 #menu-mb-button {
-  transition: all .5s ease-in-out;
+  transition: all .3s ease-in-out;
   width: auto;
   border: none;
   background: none;
@@ -158,8 +175,27 @@ div.custom-hr-fluid {
 }
 
 #menu-mb-button:hover {
-  transition: all .5s ease-in-out;
+  transition: all .3s ease-in-out;
   color: rgb(0, 0, 200);
+}
+
+#closeButtom {
+  font-size: 12pt;
+  transition: all .3s ease-in-out;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  margin-right: 10px;
+}
+
+#closeButtom:hover i {
+  transition: all .3s ease-in-out;
+  color: #900;
+  transform: scale(1.5, 1.5);
 }
 /* - - - Menu Mobile - - - */
 
@@ -208,3 +244,9 @@ div.custom-hr-fluid {
 /* - - - - - - - - - - - - - - - */
 /* - - - - Media Query - - - - - */
 /* - - - - - - - - - - - - - - - */
+
+@media screen and (max-width: 767px) {
+  .menu-mb-section-container {
+    text-align: center;
+  }
+}

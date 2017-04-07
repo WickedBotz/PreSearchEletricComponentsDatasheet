@@ -4,6 +4,12 @@
   executed or called on html. This will need all script dependences.
 */
 
+// - - - - - - Global Vars - - - - - -//
+
+var lastScrollValue = window.pageYOffset;
+
+// - - - - - - Global Vars - - - - - -//
+
 /* Margin definitions before page loads */
 window.onload = function() {
   pageFix.adjustContentMargin();
@@ -16,5 +22,13 @@ window.resize = function() {
 
 /* Menu mobile interaction - Menu Toggle */
 $('#menu-mb-button').click(function() {
-  menuMb.toggleMenu(this)
+  menuMb.toggleMenu()
+});
+
+$('#closeButtom').click(function() {
+  menuMb.menuButtomClose('#menuMb', 'menu-open');
+});
+
+$(window).scroll(function() {
+  fadeThings.navbarFadeInOut('navContainer');
 });
