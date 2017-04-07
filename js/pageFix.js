@@ -16,7 +16,7 @@ var pageFix = {
      - var pageContainer: Page container reference, that include all middle page content.
      - var footerContainer: footer container reference, that contains all footer content.
      - var height: get the footer container height to set this value as page container margin.
-     
+
   */
   adjustContentMargin : function() {
     var pageContainer = document.getElementById('pageContainer');

@@ -27,6 +27,13 @@ var fadeThings = {
 
       This function verify the window width and compare with maxWidth.
       if true, the element will be faded
+
+      The elementLabel receive a string of class, id or element name. Follow above
+      the sintax for this variable:
+        - ID: "#idName"
+        - Class: ".className"
+        - Tag: "tagName"
+        - Element Object: HTML object
   */
   fadeElementOut : function(elementLabel, maxWidth, interval) {
 
@@ -36,6 +43,9 @@ var fadeThings = {
 
   },
 
+  /* navbarFadeInOut(navbarId);
+  This function pull navbar up or down according to page scrolling
+   */
   navbarFadeInOut: function(navbarId) {
 
     var currentScroll = window.pageYOffset;

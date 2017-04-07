@@ -20,15 +20,17 @@ window.resize = function() {
   pageFix.adjustContentMargin();
 }
 
-/* Menu mobile interaction - Menu Toggle */
+/* Menu mobile interaction - Show Menu */
 $('#menu-mb-button').click(function() {
   menuMb.toggleMenu()
 });
 
+/* Menu mobile buttom close interaction - close Menu */
 $('#closeButtom').click(function() {
   menuMb.menuButtomClose('#menuMb', 'menu-open');
 });
 
+/* Navbar scroll interaction */
 $(window).scroll(function() {
   fadeThings.navbarFadeInOut('navContainer');
 });
