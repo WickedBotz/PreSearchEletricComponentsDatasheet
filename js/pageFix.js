@@ -27,5 +27,4 @@ var pageFix = {
     pageContainer.style.marginBottom = height + "px";
   }
 
-
 }
