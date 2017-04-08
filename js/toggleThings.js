@@ -75,22 +75,6 @@ var toggleThings = {
 
     lastScrollValue = currentScroll;
 
-  },
-
-  /* toggleCode(codeId)
-
-  */
-  toggleCode : function(codeId) {
-
-    if (codeId.charAt(0) === '#') {
-      $(codeId).toggleClass('code-hidden');
-
-    } else {
-      var code = document.getElementById(codeId);
-      $(code).toggleClass('code-hidden');
-
-    }
-
   }
 
 

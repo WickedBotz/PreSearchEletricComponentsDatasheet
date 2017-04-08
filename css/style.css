@@ -126,12 +126,36 @@ div.custom-hr-fluid {
 }
 
 .figure {
-  padding: 20px;
+  transition: all .3s ease-in-out;
+  padding: 20px 0 60px 0;
+}
+
+.figure img {
+  transition: all .3s ease-in-out;
+}
+
+.figure:hover img {
+  transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
 }
 
 .code-hidden {
   transition: all .3s ease-in-out;
   display: none;
+}
+
+a.collapsed {
+  text-decoration: none;
+}
+
+.clipboard-copy {
+  cursor: pointer;
+}
+
+a.clipboard-copy {
+  text-decoration: none;
+  background-color: rgba(169, 163, 255, .3);
+  border-radius: 4px;
 }
 
 /* - - - - Nav Bar - - - - */
