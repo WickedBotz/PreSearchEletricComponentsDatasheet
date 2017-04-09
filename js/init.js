@@ -22,15 +22,24 @@ window.resize = function() {
 
 /* Menu mobile interaction - Show Menu */
 $('#menu-mb-button').click(function() {
-  menuMb.toggleMenu()
+  menuMb.toggleMenu('menuMb');
 });
 
 /* Menu mobile buttom close interaction - close Menu */
 $('#closeButtom').click(function() {
-  menuMb.menuButtomClose('#menuMb', 'menu-open');
+  menuMb.closeMenu('#menuMb', 'menu-open');
 });
 
 /* Navbar scroll interaction */
 $(window).scroll(function() {
   toggleThings.navbarFadeInOut('navContainer');
+});
+
+/* Menu mobile buttom close interaction - close Menu */
+$('.menu-mb-section-container a').click(function(event) {
+
+  scrollInteraction.scrollGoesInteraction(this, 1500);
+  menuMb.closeMenu('#menuMb', 'menu-open');
+
+  event.preventDefault();
 });
