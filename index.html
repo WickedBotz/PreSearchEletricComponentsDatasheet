@@ -47,6 +47,7 @@
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
     <aside class="menu-mb-section-container">
       <ul class="list-group">
+        <a href="#" onclick="loadContent('example')"><li class="list-group-item">Example</li></a>
         <a href="#intro"><li class="list-group-item">Introdução</li></a>
         <a href="#secao1"><li class="list-group-item">Seção 1</li></a>
         <a href="#secao2"><li class="list-group-item">Seção 2</li></a>
@@ -111,24 +112,7 @@
           </header>
 
           <section class="text-container" id="datasheetContent">
-            <header class="text-title-container">
-              <h1 id="intro" class="text-content-title">Introdução</h1>
-            </header>
-            <p class="page-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <header class="text-title-container">
-              <h1 id="secao1" class="text-content-title">Seção 1</h1>
-            </header>
-            <p class="page-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <figure class="figure text-center">
-              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="Figura de placa Arduino">
-              <figcaption class="figure-caption">Lorem ipsum dolor sit amet</figcaption>
-            </figure>
+          
 
             <p class="page-paragraph">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -272,5 +256,10 @@ void loop(void)
   <script src="./js/changeThings.js"></script>
   <script src="./js/modal.js"></script>
   <script src="./js/init.js"></script>
+  <script type="text/javascript">
+  function loadContent(link){
+    $( "#datasheetContent" ).load( "partials/"+link+".html" );
+  }
+  </script>
 </body>
 </html>
