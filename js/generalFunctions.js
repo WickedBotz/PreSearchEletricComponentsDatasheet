@@ -10,7 +10,6 @@ function isJquery(elementId) {
   if (elementId.charAt(0) === '#') {
     isJquery = true;
   }
-
+  
   return isJquery;
-
 }

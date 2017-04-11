@@ -47,37 +47,9 @@
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
     <aside class="menu-mb-section-container">
       <ul class="list-group">
-        <a href="#" onclick="loadContent('example')"><li class="list-group-item">Example</li></a>
         <a href="#intro"><li class="list-group-item">Introdução</li></a>
         <a href="#secao1"><li class="list-group-item">Seção 1</li></a>
         <a href="#secao2"><li class="list-group-item">Seção 2</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
-        <a href="#"><li class="list-group-item">Cras justo odio</li></a>
-        <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
-        <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
       </ul>
     </aside>
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
@@ -112,14 +84,17 @@
           </header>
 
           <section class="text-container" id="datasheetContent">
-          
+
+            <header class="text-title-container">
+              <h1 id="intro" class="text-content-title">Introdução</h1>
+            </header>
 
             <p class="page-paragraph">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
 
             <header class="text-title-container">
-              <h1 id="secao2" class="text-content-title">Seção 2</h1>
+              <h1 id="secao1" class="text-content-title">Seção 1</h1>
             </header>
 
             <p class="page-paragraph">
@@ -127,8 +102,8 @@
             </p>
 
             <figure class="figure text-center">
-              <img data-src="./img/components/drive.png" src="./img/components/drive.png" class="img-rounded" alt="Figura de placa Arduino">
-              <figcaption class="figure-caption">Placa arduino uno</figcaption>
+              <img data-src="./img/components/drive.png" src="./img/components/drive.png" class="img-rounded" alt="Placa Driver sei la do que">
+              <figcaption class="figure-caption">Placa Driver sei la do que</figcaption>
             </figure>
 
             <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -143,81 +118,74 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <pre id="code1">
-#include < Wire.h >
-#include < Adafruit_Sensor.h >
-#include < Adafruit_LSM303_U.h >
+/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+*/
 
-/* Assign a unique ID to these sensors */
-Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(54321);
-Adafruit_LSM303_Mag_Unified mag = Adafruit_LSM303_Mag_Unified(12345);
 
-float AccelMinX, AccelMaxX;
-float AccelMinY, AccelMaxY;
-float AccelMinZ, AccelMaxZ;
-
-float MagMinX, MagMaxX;
-float MagMinY, MagMaxY;
-float MagMinZ, MagMaxZ;
-
-long lastDisplayTime;
-
-void setup(void)
-{
-  Serial.begin(9600);
-  Serial.println("LSM303 Calibration"); Serial.println("");
-
-  /* Initialise the accelerometer */
-  if(!accel.begin())
-  {
-    /* There was a problem detecting the ADXL345 ... check your connections */
-    Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-    while(1);
-  }
-  /* Initialise the magnetometer */
-  if(!mag.begin())
-  {
-    /* There was a problem detecting the LSM303 ... check your connections */
-    Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-    while(1);
-  }
-  lastDisplayTime = millis();
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void loop(void)
-{
-  /* Get a new sensor event */
-  sensors_event_t accelEvent;
-  sensors_event_t magEvent;
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+                  </pre>
+                </div>
 
-  accel.getEvent(&accelEvent);
-  mag.getEvent(&magEvent);
+              </div>
+            </div>
 
-  if (accelEvent.acceleration.x < AccelMinX) AccelMinX = accelEvent.acceleration.x;
-  if (accelEvent.acceleration.x > AccelMaxX) AccelMaxX = accelEvent.acceleration.x;
+            <header class="text-title-container">
+              <h1 id="secao2" class="text-content-title">Seção 2</h1>
+            </header>
 
-  if (accelEvent.acceleration.y < AccelMinY) AccelMinY = accelEvent.acceleration.y;
-  if (accelEvent.acceleration.y > AccelMaxY) AccelMaxY = accelEvent.acceleration.y;
+            <p class="page-paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
 
-  if (accelEvent.acceleration.z < AccelMinZ) AccelMinZ = accelEvent.acceleration.z;
-  if (accelEvent.acceleration.z > AccelMaxZ) AccelMaxZ = accelEvent.acceleration.z;
+            <figure class="figure text-center">
+              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="Figura de placa Arduino">
+              <figcaption class="figure-caption">Placa arduino uno</figcaption>
+            </figure>
 
-  if (magEvent.magnetic.x < MagMinX) MagMinX = magEvent.magnetic.x;
-  if (magEvent.magnetic.x > MagMaxX) MagMaxX = magEvent.magnetic.x;
+            <div id="accordion2" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code2"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOwo" aria-expanded="false" aria-controls="collapseOwo">
+                      Show Code
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
+                  <pre id="code2">
+/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+*/
 
-  if (magEvent.magnetic.y < MagMinY) MagMinY = magEvent.magnetic.y;
-  if (magEvent.magnetic.y > MagMaxY) MagMaxY = magEvent.magnetic.y;
 
-  if (magEvent.magnetic.z < MagMinZ) MagMinZ = magEvent.magnetic.z;
-  if (magEvent.magnetic.z > MagMaxZ) MagMaxZ = magEvent.magnetic.z;
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
 
-  if ((millis() - lastDisplayTime) > 1000)  // display once/second
-  {
-    Serial.print("Accel Minimums: "); Serial.print(AccelMinX); Serial.print("  ");Serial.print(AccelMinY); Serial.print("  "); Serial.print(AccelMinZ); Serial.println();
-    Serial.print("Accel Maximums: "); Serial.print(AccelMaxX); Serial.print("  ");Serial.print(AccelMaxY); Serial.print("  "); Serial.print(AccelMaxZ); Serial.println();
-    Serial.print("Mag Minimums: "); Serial.print(MagMinX); Serial.print("  ");Serial.print(MagMinY); Serial.print("  "); Serial.print(MagMinZ); Serial.println();
-    Serial.print("Mag Maximums: "); Serial.print(MagMaxX); Serial.print("  ");Serial.print(MagMaxY); Serial.print("  "); Serial.print(MagMaxZ); Serial.println(); Serial.println();
-    lastDisplayTime = millis();
-  }
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
 }
                   </pre>
                 </div>
@@ -247,8 +215,11 @@ void loop(void)
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="./libs/jquery/jquery-3.2.0.min.js"></script>
+
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="./libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Created functions -->
   <script src="./js/generalFunctions.js"></script>
   <script src="./js/pageFix.js"></script>
   <script src="./js/pageInteraction.js"></script>
@@ -256,10 +227,7 @@ void loop(void)
   <script src="./js/changeThings.js"></script>
   <script src="./js/modal.js"></script>
   <script src="./js/init.js"></script>
-  <script type="text/javascript">
-  function loadContent(link){
-    $( "#datasheetContent" ).load( "partials/"+link+".html" );
-  }
-  </script>
+
 </body>
+
 </html>

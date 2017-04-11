@@ -46,14 +46,23 @@ var menuMb = {
 var scrollInteraction = {
 
   /* scrollGoesInteraction(elementReference);
-  this functions makes scroll animated, where elementReference is the element that
-  was clicked or interaged
+  this functions makes gradual scroll that goes to target element referenced on
+  "href" element atribute.
+
+  [ Variables ]:
+  - ElementReference: Is the element that was clicked or interaged.
+  - navbarHeight: Value ov navbar height to adjust the scroll perfectly
+  - goes: the scrollTop goes value
+  - animationdTime: Time of gradual scroll animation
+
   */
-  scrollGoesInteraction : function(elementReference, animatedTime) {
+  scrollGoesInteraction : function(elementReference, animationdTime) {
+    var navbarHeight = 40;
+    var goes = $($(elementReference).attr('href')).offset().top - navbarHeight;
 
     $('html, body').animate( {
-      scrollTop: $($(elementReference).attr('href')).offset().top
-    }, animatedTime);
+      scrollTop: goes
+    }, animationdTime);
 
 
   }

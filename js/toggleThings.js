@@ -44,7 +44,14 @@ var toggleThings = {
   },
 
   /* navbarFadeInOut(navbarId);
-  This function pull navbar up or down according to page scrolling
+
+    This function pull navbar up or down according to page scrolling
+
+    [ Variables ]:
+    - currentScroll: Actual Scroll after user scrolling
+    - lastScrollValue: The last user scroll value - It's a global variable difined on init.js
+    - navbarId: Id or element object of the navbar
+    - navbar: receive a navbar reference if the id is javascript type
   */
   navbarFadeInOut: function(navbarId) {
 
@@ -76,6 +83,5 @@ var toggleThings = {
     lastScrollValue = currentScroll;
 
   }
-
 
 }

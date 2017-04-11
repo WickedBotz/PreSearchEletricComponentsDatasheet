@@ -6,19 +6,15 @@
 
 // - - - - - - Global Vars - - - - - -//
 
+// Reference to the last scroll value
 var lastScrollValue = window.pageYOffset;
 
 // - - - - - - Global Vars - - - - - -//
 
 /* Margin definitions before page loads */
-window.onload = function() {
+$(document).ready(function() {
   pageFix.adjustContentMargin();
-};
-
-/* Margin definitions while page resize */
-window.resize = function() {
-  pageFix.adjustContentMargin();
-}
+});
 
 /* Menu mobile interaction - Show Menu */
 $('#menu-mb-button').click(function() {
@@ -38,25 +34,25 @@ $(window).scroll(function() {
 /* Menu mobile buttom close interaction - close Menu */
 $('.menu-mb-section-container a').click(function(event) {
 
-  scrollInteraction.scrollGoesInteraction(this, 1500);
+  scrollInteraction.scrollGoesInteraction(this, 1000);
   menuMb.closeMenu('#menuMb', 'menu-open');
 
   event.preventDefault();
 });
 
+/* Image modal, thats show it on image click */
 $('img').click(function() {
-  modalController.imgModal(this, '#modalImage', '#figCaption', '#imageModalContainer');
+  modalController.imgModalController.imgModal(this, '#modalImage', '#figCaption', '#imageModalContainer');
 });
 
+/* Close modal when click in all modal-image-container area */
 $('#imageModalContainer').click(function() {
-
-  modalController.imgModalClose(this);
-
+  modalController.imgModalController.imgModalClose(this);
 });
 
+/* Functions that copy all highlighted text */
 $(".clipboard-copy").click(function() {
   var target = document.querySelector(this.dataset.target);
-  
 
   try {
     document.execCommand('copy');
