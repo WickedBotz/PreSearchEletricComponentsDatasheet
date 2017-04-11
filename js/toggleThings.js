@@ -50,7 +50,7 @@ var toggleThings = {
 
     var currentScroll = window.pageYOffset;
 
-    if (navbarId.charAt(0) === '#') {
+    if (isJquery(navbarId)) {
 
       if (lastScrollValue >= currentScroll) {
         $(navbarId).removeClass('nav-bar-offpage');

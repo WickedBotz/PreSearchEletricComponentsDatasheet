@@ -22,6 +22,12 @@ code {
   display: block;
 }
 
+img {
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+}
+
 /* - - - - - - - - - - - - - - - - - */
 /* - - - Tag+Class Definitions - - - */
 /* - - - - - - - - - - - - - - - - - */
@@ -60,6 +66,19 @@ div.custom-hr-fluid {
 /* - - - Class Definitions - - - */
 /* - - - - - - - - - - - - - - - */
 
+/* Especific classes */
+.fixed {
+  position: fixed !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 /* Footer copyrights definitions */
 .copyright {
   color: #DDD;
@@ -88,12 +107,57 @@ div.custom-hr-fluid {
   height: 100%;
 }
 
-.fixed {
-  position: fixed ;
+.modal-image-container {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, .9);
+  z-index: 1;
+  padding: 50px;;
+  margin: 0;
 }
 
-.overflow-hidden {
-  overflow: hidden !important;
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.figure-caption {
+  font-size: 1em;
+  color: rgb(226, 178, 20);
+  margin-top: 20px;
+}
+
+.modal-img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.close-buttom {
+  font-size: 12pt;
+  transition: all .3s ease-in-out;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close-buttom i {
+  transition: all .3s ease-in-out;
+}
+
+.close-buttom i:hover {
+  transition: all .3s ease-in-out;
+  color: #900;
+  transform: scale(1.5, 1.5);
 }
 
 .text-content-title {
@@ -134,7 +198,7 @@ div.custom-hr-fluid {
   transition: all .3s ease-in-out;
 }
 
-.figure:hover img {
+.figure img:hover {
   transition: all .3s ease-in-out;
   transform: scale(1.1, 1.1);
 }
@@ -268,6 +332,18 @@ a.clipboard-copy {
 /* - - - ID's definitions- - - - */
 /* - - - - - - - - - - - - - - - */
 
+/* - - - - - - Modal - - - - - - */
+
+#imageModalContainer img {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1s;
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+
+/* - - - - - - Modal - - - - - - */
+
+
 /* - - - Menu Mobile - - - */
 
 #buttonFa {
@@ -286,28 +362,9 @@ a.clipboard-copy {
   z-index: 1;
 }
 
-#menu-mb-button:hover {
-  transition: all .3s ease-in-out;
-  color: rgb(0, 0, 200);
-}
-
 #closeButtom {
-  font-size: 12pt;
-  transition: all .3s ease-in-out;
-  background: none;
-  border: none;
-  outline: none;
-  position: absolute;
-  top: 0;
-  right: 0;
   height: 100%;
   margin-right: 10px;
-}
-
-#closeButtom:hover i {
-  transition: all .3s ease-in-out;
-  color: #900;
-  transform: scale(1.5, 1.5);
 }
 /* - - - Menu Mobile - - - */
 
@@ -353,6 +410,33 @@ a.clipboard-copy {
   padding: 16px;
 }
 
+
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Keyframes-  - - - - - */
+/* - - - - - - - - - - - - - - - */
+
+/* Zoom na imagem  */
+@-webkit-keyframes zoom {
+  0% {-webkit-transform: scale(0)}
+  50% {-webkit-transform: scale(1.3)}
+  100% {-webkit-transform: scale(1)}
+}
+
+@-webkit-keyframes zoom {
+  0% {-webkit-transform: scale(0)}
+  50% {-webkit-transform: scale(1.3)}
+  100% {-webkit-transform: scale(1)}
+}
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Keyframes - - - - - - */
+/* - - - - - - - - - - - - - - - */
+
+
+
+
+
 /* - - - - - - - - - - - - - - - */
 /* - - - - Media Query - - - - - */
 /* - - - - - - - - - - - - - - - */
@@ -362,3 +446,7 @@ a.clipboard-copy {
     text-align: center;
   }
 }
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Media Query - - - - - */
+/* - - - - - - - - - - - - - - - */

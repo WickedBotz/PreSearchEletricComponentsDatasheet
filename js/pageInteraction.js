@@ -10,7 +10,7 @@ var menuMb = {
    */
   toggleMenu : function(menuId) {
 
-    if (menuId.charAt(0) === '#') {
+    if (isJquery(menuId)) {
       $(menuId).addClass('menu-open');
 
     } else {
@@ -31,7 +31,7 @@ var menuMb = {
   */
   closeMenu : function(menuId, menuOpenClass) {
 
-    if (menuId.charAt(0) === '#') {
+    if (isJquery(menuId)) {
       $(menuId).removeClass(menuOpenClass);
     } else {
       var menu = document.getElementById(menuId);

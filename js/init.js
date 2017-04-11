@@ -43,3 +43,13 @@ $('.menu-mb-section-container a').click(function(event) {
 
   event.preventDefault();
 });
+
+$('img').click(function() {
+  modalController.imgModal(this, '#modalImage', '#figCaption', '#imageModalContainer');
+});
+
+$('#imageModalContainer').click(function() {
+
+  modalController.imgModalClose(this);
+
+});

@@ -20,17 +20,31 @@
 </head>
 <body>
 
+  <!-- - - - - - - - - -  IMG MODAL - - - - - - - - - - -->
+  <figure id="imageModalContainer" class="modal-image-container cover-image hidden text-center figure">
+    <div class="modal-content">
+      <img src="" id="modalImage" class="modal-img" alt="">
+      <figcaption id="figCaption" class="figure-caption"></figcaption>
+    </div>
+
+  </figure>
+  <!-- - - - - - - - - -  IMG MODAL - - - - - - - - - - -->
+
+  <!-- - - - - - - - - -  MENU MOBILE - - - - - - - - - - -->
   <menu id="menuMb" class="menu col-xs-12 col-sm-3 col-md-2 col-lg-2">
 
+    <!-- - - - - - - - - -  MENU MOBILE HEADER - - - - - - - - - - -->
     <header class="nav-container menu-mb-header">
       <span class="menu-mb-title">Sessões</span>
-      <button id="closeButtom" class="pull-right">
+      <button id="closeButtom" class="pull-right close-buttom">
         <i class="fa fa-times fa-3" aria-hidden="true"></i>
       </button>
     </header>
+    <!-- - - - - - - - - -  MENU MOBILE HEADER - - - - - - - - - - -->
 
     <div class="custom-hr center-block"></div>
 
+    <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
     <aside class="menu-mb-section-container">
       <ul class="list-group">
         <a href="#intro"><li class="list-group-item">Introdução</li></a>
@@ -65,9 +79,12 @@
         <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
       </ul>
     </aside>
+    <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
 
   </menu>
+  <!-- - - - - - - - - -  MENU MOBILE - - - - - - - - - - -->
 
+  <!-- - - - - - - - - -  PAGE CONTAINER - - - - - - - - - - -->
   <main id="pageContainer" class="container-fluid">
 
     <header id="navContainer" class="nav-container fixed">
@@ -102,14 +119,14 @@
             </p>
 
             <header class="text-title-container">
-              <h1 id="secao1" class="text-content-title">Sessão 1</h1>
+              <h1 id="secao1" class="text-content-title">Seção 1</h1>
             </header>
             <p class="page-paragraph">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
 
             <figure class="figure text-center">
-              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="">
+              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="Figura de placa Arduino">
               <figcaption class="figure-caption">Lorem ipsum dolor sit amet</figcaption>
             </figure>
 
@@ -118,7 +135,7 @@
             </p>
 
             <header class="text-title-container">
-              <h1 id="secao2" class="text-content-title">Sessão 2</h1>
+              <h1 id="secao2" class="text-content-title">Seção 2</h1>
             </header>
 
             <p class="page-paragraph">
@@ -126,7 +143,7 @@
             </p>
 
             <figure class="figure text-center">
-              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="">
+              <img data-src="./img/components/drive.png" src="./img/components/drive.png" class="img-rounded" alt="Figura de placa Arduino">
               <figcaption class="figure-caption">Placa arduino uno</figcaption>
             </figure>
 
@@ -141,82 +158,82 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <pre>
-      #include < Wire.h >
-      #include < Adafruit_Sensor.h >
-      #include < Adafruit_LSM303_U.h >
+                    #include < Wire.h >
+                    #include < Adafruit_Sensor.h >
+                    #include < Adafruit_LSM303_U.h >
 
-      /* Assign a unique ID to these sensors */
-      Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(54321);
-      Adafruit_LSM303_Mag_Unified mag = Adafruit_LSM303_Mag_Unified(12345);
+                    /* Assign a unique ID to these sensors */
+                    Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(54321);
+                    Adafruit_LSM303_Mag_Unified mag = Adafruit_LSM303_Mag_Unified(12345);
 
-      float AccelMinX, AccelMaxX;
-      float AccelMinY, AccelMaxY;
-      float AccelMinZ, AccelMaxZ;
+                    float AccelMinX, AccelMaxX;
+                    float AccelMinY, AccelMaxY;
+                    float AccelMinZ, AccelMaxZ;
 
-      float MagMinX, MagMaxX;
-      float MagMinY, MagMaxY;
-      float MagMinZ, MagMaxZ;
+                    float MagMinX, MagMaxX;
+                    float MagMinY, MagMaxY;
+                    float MagMinZ, MagMaxZ;
 
-      long lastDisplayTime;
+                    long lastDisplayTime;
 
-      void setup(void)
-      {
-        Serial.begin(9600);
-        Serial.println("LSM303 Calibration"); Serial.println("");
+                    void setup(void)
+                    {
+                      Serial.begin(9600);
+                      Serial.println("LSM303 Calibration"); Serial.println("");
 
-        /* Initialise the accelerometer */
-        if(!accel.begin())
-        {
-          /* There was a problem detecting the ADXL345 ... check your connections */
-          Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-          while(1);
-        }
-        /* Initialise the magnetometer */
-        if(!mag.begin())
-        {
-          /* There was a problem detecting the LSM303 ... check your connections */
-          Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-          while(1);
-        }
-        lastDisplayTime = millis();
-      }
+                      /* Initialise the accelerometer */
+                      if(!accel.begin())
+                      {
+                        /* There was a problem detecting the ADXL345 ... check your connections */
+                        Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
+                        while(1);
+                      }
+                      /* Initialise the magnetometer */
+                      if(!mag.begin())
+                      {
+                        /* There was a problem detecting the LSM303 ... check your connections */
+                        Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
+                        while(1);
+                      }
+                      lastDisplayTime = millis();
+                    }
 
-      void loop(void)
-      {
-        /* Get a new sensor event */
-        sensors_event_t accelEvent;
-        sensors_event_t magEvent;
+                    void loop(void)
+                    {
+                      /* Get a new sensor event */
+                      sensors_event_t accelEvent;
+                      sensors_event_t magEvent;
 
-        accel.getEvent(&accelEvent);
-        mag.getEvent(&magEvent);
+                      accel.getEvent(&accelEvent);
+                      mag.getEvent(&magEvent);
 
-        if (accelEvent.acceleration.x < AccelMinX) AccelMinX = accelEvent.acceleration.x;
-        if (accelEvent.acceleration.x > AccelMaxX) AccelMaxX = accelEvent.acceleration.x;
+                      if (accelEvent.acceleration.x < AccelMinX) AccelMinX = accelEvent.acceleration.x;
+                      if (accelEvent.acceleration.x > AccelMaxX) AccelMaxX = accelEvent.acceleration.x;
 
-        if (accelEvent.acceleration.y < AccelMinY) AccelMinY = accelEvent.acceleration.y;
-        if (accelEvent.acceleration.y > AccelMaxY) AccelMaxY = accelEvent.acceleration.y;
+                      if (accelEvent.acceleration.y < AccelMinY) AccelMinY = accelEvent.acceleration.y;
+                      if (accelEvent.acceleration.y > AccelMaxY) AccelMaxY = accelEvent.acceleration.y;
 
-        if (accelEvent.acceleration.z < AccelMinZ) AccelMinZ = accelEvent.acceleration.z;
-        if (accelEvent.acceleration.z > AccelMaxZ) AccelMaxZ = accelEvent.acceleration.z;
+                      if (accelEvent.acceleration.z < AccelMinZ) AccelMinZ = accelEvent.acceleration.z;
+                      if (accelEvent.acceleration.z > AccelMaxZ) AccelMaxZ = accelEvent.acceleration.z;
 
-        if (magEvent.magnetic.x < MagMinX) MagMinX = magEvent.magnetic.x;
-        if (magEvent.magnetic.x > MagMaxX) MagMaxX = magEvent.magnetic.x;
+                      if (magEvent.magnetic.x < MagMinX) MagMinX = magEvent.magnetic.x;
+                      if (magEvent.magnetic.x > MagMaxX) MagMaxX = magEvent.magnetic.x;
 
-        if (magEvent.magnetic.y < MagMinY) MagMinY = magEvent.magnetic.y;
-        if (magEvent.magnetic.y > MagMaxY) MagMaxY = magEvent.magnetic.y;
+                      if (magEvent.magnetic.y < MagMinY) MagMinY = magEvent.magnetic.y;
+                      if (magEvent.magnetic.y > MagMaxY) MagMaxY = magEvent.magnetic.y;
 
-        if (magEvent.magnetic.z < MagMinZ) MagMinZ = magEvent.magnetic.z;
-        if (magEvent.magnetic.z > MagMaxZ) MagMaxZ = magEvent.magnetic.z;
+                      if (magEvent.magnetic.z < MagMinZ) MagMinZ = magEvent.magnetic.z;
+                      if (magEvent.magnetic.z > MagMaxZ) MagMaxZ = magEvent.magnetic.z;
 
-        if ((millis() - lastDisplayTime) > 1000)  // display once/second
-        {
-          Serial.print("Accel Minimums: "); Serial.print(AccelMinX); Serial.print("  ");Serial.print(AccelMinY); Serial.print("  "); Serial.print(AccelMinZ); Serial.println();
-          Serial.print("Accel Maximums: "); Serial.print(AccelMaxX); Serial.print("  ");Serial.print(AccelMaxY); Serial.print("  "); Serial.print(AccelMaxZ); Serial.println();
-          Serial.print("Mag Minimums: "); Serial.print(MagMinX); Serial.print("  ");Serial.print(MagMinY); Serial.print("  "); Serial.print(MagMinZ); Serial.println();
-          Serial.print("Mag Maximums: "); Serial.print(MagMaxX); Serial.print("  ");Serial.print(MagMaxY); Serial.print("  "); Serial.print(MagMaxZ); Serial.println(); Serial.println();
-          lastDisplayTime = millis();
-        }
-      }
+                      if ((millis() - lastDisplayTime) > 1000)  // display once/second
+                      {
+                        Serial.print("Accel Minimums: "); Serial.print(AccelMinX); Serial.print("  ");Serial.print(AccelMinY); Serial.print("  "); Serial.print(AccelMinZ); Serial.println();
+                        Serial.print("Accel Maximums: "); Serial.print(AccelMaxX); Serial.print("  ");Serial.print(AccelMaxY); Serial.print("  "); Serial.print(AccelMaxZ); Serial.println();
+                        Serial.print("Mag Minimums: "); Serial.print(MagMinX); Serial.print("  ");Serial.print(MagMinY); Serial.print("  "); Serial.print(MagMinZ); Serial.println();
+                        Serial.print("Mag Maximums: "); Serial.print(MagMaxX); Serial.print("  ");Serial.print(MagMaxY); Serial.print("  "); Serial.print(MagMaxZ); Serial.println(); Serial.println();
+                        lastDisplayTime = millis();
+                      }
+                    }
                   </pre>
                 </div>
 
@@ -233,6 +250,7 @@
 
     </section>
   </main>
+  <!-- - - - - - - - - -  PAGE CONTAINER - - - - - - - - - - -->
 
 
   <div id="footer-container" class="container-fluid text-center">
@@ -246,10 +264,12 @@
   <script src="./libs/jquery/jquery-3.2.0.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="./libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+  <script src="./js/generalFunctions.js"></script>
   <script src="./js/pageFix.js"></script>
   <script src="./js/pageInteraction.js"></script>
   <script src="./js/toggleThings.js"></script>
   <script src="./js/changeThings.js"></script>
+  <script src="./js/modal.js"></script>
   <script src="./js/init.js"></script>
 </body>
 </html>
