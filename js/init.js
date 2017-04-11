@@ -53,3 +53,15 @@ $('#imageModalContainer').click(function() {
   modalController.imgModalClose(this);
 
 });
+
+$(".clipboard-copy").click(function() {
+  var target = document.querySelector(this.dataset.target);
+  
+
+  try {
+    document.execCommand('copy');
+  } catch (err) {
+    alert("The copy function is not enable on your browser");
+  }
+
+});

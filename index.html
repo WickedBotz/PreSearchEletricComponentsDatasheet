@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
   <title>Datasheet WickedBotz - Componentes elétricos</title>
 
   <!-- Bootstrap -->
@@ -151,89 +151,90 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
+                    <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Show Code
                     </a>
                   </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <pre>
-                    #include < Wire.h >
-                    #include < Adafruit_Sensor.h >
-                    #include < Adafruit_LSM303_U.h >
+                  <pre id="code1">
+#include < Wire.h >
+#include < Adafruit_Sensor.h >
+#include < Adafruit_LSM303_U.h >
 
-                    /* Assign a unique ID to these sensors */
-                    Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(54321);
-                    Adafruit_LSM303_Mag_Unified mag = Adafruit_LSM303_Mag_Unified(12345);
+/* Assign a unique ID to these sensors */
+Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(54321);
+Adafruit_LSM303_Mag_Unified mag = Adafruit_LSM303_Mag_Unified(12345);
 
-                    float AccelMinX, AccelMaxX;
-                    float AccelMinY, AccelMaxY;
-                    float AccelMinZ, AccelMaxZ;
+float AccelMinX, AccelMaxX;
+float AccelMinY, AccelMaxY;
+float AccelMinZ, AccelMaxZ;
 
-                    float MagMinX, MagMaxX;
-                    float MagMinY, MagMaxY;
-                    float MagMinZ, MagMaxZ;
+float MagMinX, MagMaxX;
+float MagMinY, MagMaxY;
+float MagMinZ, MagMaxZ;
 
-                    long lastDisplayTime;
+long lastDisplayTime;
 
-                    void setup(void)
-                    {
-                      Serial.begin(9600);
-                      Serial.println("LSM303 Calibration"); Serial.println("");
+void setup(void)
+{
+  Serial.begin(9600);
+  Serial.println("LSM303 Calibration"); Serial.println("");
 
-                      /* Initialise the accelerometer */
-                      if(!accel.begin())
-                      {
-                        /* There was a problem detecting the ADXL345 ... check your connections */
-                        Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-                        while(1);
-                      }
-                      /* Initialise the magnetometer */
-                      if(!mag.begin())
-                      {
-                        /* There was a problem detecting the LSM303 ... check your connections */
-                        Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
-                        while(1);
-                      }
-                      lastDisplayTime = millis();
-                    }
+  /* Initialise the accelerometer */
+  if(!accel.begin())
+  {
+    /* There was a problem detecting the ADXL345 ... check your connections */
+    Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
+    while(1);
+  }
+  /* Initialise the magnetometer */
+  if(!mag.begin())
+  {
+    /* There was a problem detecting the LSM303 ... check your connections */
+    Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
+    while(1);
+  }
+  lastDisplayTime = millis();
+}
 
-                    void loop(void)
-                    {
-                      /* Get a new sensor event */
-                      sensors_event_t accelEvent;
-                      sensors_event_t magEvent;
+void loop(void)
+{
+  /* Get a new sensor event */
+  sensors_event_t accelEvent;
+  sensors_event_t magEvent;
 
-                      accel.getEvent(&accelEvent);
-                      mag.getEvent(&magEvent);
+  accel.getEvent(&accelEvent);
+  mag.getEvent(&magEvent);
 
-                      if (accelEvent.acceleration.x < AccelMinX) AccelMinX = accelEvent.acceleration.x;
-                      if (accelEvent.acceleration.x > AccelMaxX) AccelMaxX = accelEvent.acceleration.x;
+  if (accelEvent.acceleration.x < AccelMinX) AccelMinX = accelEvent.acceleration.x;
+  if (accelEvent.acceleration.x > AccelMaxX) AccelMaxX = accelEvent.acceleration.x;
 
-                      if (accelEvent.acceleration.y < AccelMinY) AccelMinY = accelEvent.acceleration.y;
-                      if (accelEvent.acceleration.y > AccelMaxY) AccelMaxY = accelEvent.acceleration.y;
+  if (accelEvent.acceleration.y < AccelMinY) AccelMinY = accelEvent.acceleration.y;
+  if (accelEvent.acceleration.y > AccelMaxY) AccelMaxY = accelEvent.acceleration.y;
 
-                      if (accelEvent.acceleration.z < AccelMinZ) AccelMinZ = accelEvent.acceleration.z;
-                      if (accelEvent.acceleration.z > AccelMaxZ) AccelMaxZ = accelEvent.acceleration.z;
+  if (accelEvent.acceleration.z < AccelMinZ) AccelMinZ = accelEvent.acceleration.z;
+  if (accelEvent.acceleration.z > AccelMaxZ) AccelMaxZ = accelEvent.acceleration.z;
 
-                      if (magEvent.magnetic.x < MagMinX) MagMinX = magEvent.magnetic.x;
-                      if (magEvent.magnetic.x > MagMaxX) MagMaxX = magEvent.magnetic.x;
+  if (magEvent.magnetic.x < MagMinX) MagMinX = magEvent.magnetic.x;
+  if (magEvent.magnetic.x > MagMaxX) MagMaxX = magEvent.magnetic.x;
 
-                      if (magEvent.magnetic.y < MagMinY) MagMinY = magEvent.magnetic.y;
-                      if (magEvent.magnetic.y > MagMaxY) MagMaxY = magEvent.magnetic.y;
+  if (magEvent.magnetic.y < MagMinY) MagMinY = magEvent.magnetic.y;
+  if (magEvent.magnetic.y > MagMaxY) MagMaxY = magEvent.magnetic.y;
 
-                      if (magEvent.magnetic.z < MagMinZ) MagMinZ = magEvent.magnetic.z;
-                      if (magEvent.magnetic.z > MagMaxZ) MagMaxZ = magEvent.magnetic.z;
+  if (magEvent.magnetic.z < MagMinZ) MagMinZ = magEvent.magnetic.z;
+  if (magEvent.magnetic.z > MagMaxZ) MagMaxZ = magEvent.magnetic.z;
 
-                      if ((millis() - lastDisplayTime) > 1000)  // display once/second
-                      {
-                        Serial.print("Accel Minimums: "); Serial.print(AccelMinX); Serial.print("  ");Serial.print(AccelMinY); Serial.print("  "); Serial.print(AccelMinZ); Serial.println();
-                        Serial.print("Accel Maximums: "); Serial.print(AccelMaxX); Serial.print("  ");Serial.print(AccelMaxY); Serial.print("  "); Serial.print(AccelMaxZ); Serial.println();
-                        Serial.print("Mag Minimums: "); Serial.print(MagMinX); Serial.print("  ");Serial.print(MagMinY); Serial.print("  "); Serial.print(MagMinZ); Serial.println();
-                        Serial.print("Mag Maximums: "); Serial.print(MagMaxX); Serial.print("  ");Serial.print(MagMaxY); Serial.print("  "); Serial.print(MagMaxZ); Serial.println(); Serial.println();
-                        lastDisplayTime = millis();
-                      }
-                    }
+  if ((millis() - lastDisplayTime) > 1000)  // display once/second
+  {
+    Serial.print("Accel Minimums: "); Serial.print(AccelMinX); Serial.print("  ");Serial.print(AccelMinY); Serial.print("  "); Serial.print(AccelMinZ); Serial.println();
+    Serial.print("Accel Maximums: "); Serial.print(AccelMaxX); Serial.print("  ");Serial.print(AccelMaxY); Serial.print("  "); Serial.print(AccelMaxZ); Serial.println();
+    Serial.print("Mag Minimums: "); Serial.print(MagMinX); Serial.print("  ");Serial.print(MagMinY); Serial.print("  "); Serial.print(MagMinZ); Serial.println();
+    Serial.print("Mag Maximums: "); Serial.print(MagMaxX); Serial.print("  ");Serial.print(MagMaxY); Serial.print("  "); Serial.print(MagMaxZ); Serial.println(); Serial.println();
+    lastDisplayTime = millis();
+  }
+}
                   </pre>
                 </div>
 

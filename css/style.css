@@ -198,6 +198,12 @@ div.custom-hr-fluid {
   transition: all .3s ease-in-out;
 }
 
+.code-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .figure img:hover,
 .modal-image-container img:hover {
   transition: all .3s ease-in-out;
