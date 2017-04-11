@@ -114,7 +114,6 @@ div.custom-hr-fluid {
   height: 100%;
   background-color: rgba(30, 30, 30, .9);
   z-index: 1;
-  padding: 50px;;
   margin: 0;
 }
 
@@ -194,11 +193,13 @@ div.custom-hr-fluid {
   padding: 20px 0 60px 0;
 }
 
-.figure img {
+.figure img,
+.modal-image-container img {
   transition: all .3s ease-in-out;
 }
 
-.figure img:hover {
+.figure img:hover,
+.modal-image-container img:hover {
   transition: all .3s ease-in-out;
   transform: scale(1.1, 1.1);
 }
@@ -333,19 +334,16 @@ a.clipboard-copy {
 /* - - - - - - - - - - - - - - - */
 
 /* - - - - - - Modal - - - - - - */
-
 #imageModalContainer img {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 1s;
   animation-name: zoom;
   animation-duration: 1s;
 }
-
 /* - - - - - - Modal - - - - - - */
 
 
 /* - - - Menu Mobile - - - */
-
 #buttonFa {
   margin: 8px;
 }
