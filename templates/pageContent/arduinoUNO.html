@@ -1,0 +1,63 @@
+<header class="text-title-container">
+  <h1 id="arduinoUno" class="text-content-title">Arduino Uno</h1>
+</header>
+
+<p>Usado como ligador de varios componentes e como cerebro de todo projeto com base nele.</p>
+
+<header class="text-title-container alert alert-warning">
+  <h2 id="arduinoUno" class="text-content-title">Atenção</h2>
+</header>
+
+<p class="page-paragraph">
+  O Arduino / Genuino Uno tem um polyfuse reinicializável que protege as portas USB do seu computador de shorts e sobrecorrente. Embora a maioria dos computadores forneçam sua própria proteção interna, o fusível fornece uma camada extra de proteção. Se mais de 500 mA for aplicado à porta USB, o fusível quebrará automaticamente a conexão até que o curto ou a sobrecarga seja removido.
+</p>
+
+<header class="text-title-container alert alert-info">
+  <h2 id="arduinoUno" class="text-content-title">Energia</h2>
+</header>
+
+<p class="page-paragraph">
+  A placa pode operar em uma fonte externa de 6 a 20 volts. Se fornecido com menos de 7V, no entanto, o pino 5V pode fornecer menos de cinco volts ea placa pode ficar instável. Se usar mais de 12V, o regulador de tensão pode superaquecer e danificar a placa. A faixa recomendada é de 7 a 12 volts.
+</p>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/drive.png" src="./img/components/drive.png" class="img-rounded" alt="Placa Driver sei la do que">
+  <figcaption class="figure-caption">Placa Driver sei la do que</figcaption>
+</figure>
+
+<div id="accordion2" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code2"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOwo" aria-expanded="false" aria-controls="collapseOwo">
+          Show Code Aruinos
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
+      <pre id="code2">
+        /*
+        Blink
+        Turns on an LED on for one second, then off for one second, repeatedly.
+        */
+
+
+        // the setup function runs once when you press reset or power the board
+        void setup() {
+          // initialize digital pin LED_BUILTIN as an output.
+          pinMode(LED_BUILTIN, OUTPUT);
+        }
+
+        // the loop function runs over and over again forever
+        void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+          delay(1000);                       // wait for a second
+          digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+          delay(1000);                       // wait for a second
+        }
+      </pre>
+    </div>
+
+  </div>
+</div>

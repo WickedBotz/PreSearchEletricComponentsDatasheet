@@ -47,9 +47,7 @@
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
     <aside class="menu-mb-section-container">
       <ul class="list-group">
-        <a href="#intro"><li class="list-group-item">Introdução</li></a>
-        <a href="#secao1"><li class="list-group-item">Seção 1</li></a>
-        <a href="#secao2"><li class="list-group-item">Seção 2</li></a>
+        <a href="#arduinoUno"><li class="list-group-item">Arduino</li></a>      
       </ul>
     </aside>
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
@@ -85,116 +83,10 @@
 
           <section class="text-container" id="datasheetContent">
 
-            <header class="text-title-container">
-              <h1 id="intro" class="text-content-title">Introdução</h1>
-            </header>
-
-            <p class="page-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <header class="text-title-container">
-              <h1 id="secao1" class="text-content-title">Seção 1</h1>
-            </header>
-
-            <p class="page-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <figure class="figure text-center">
-              <img data-src="./img/components/drive.png" src="./img/components/drive.png" class="img-rounded" alt="Placa Driver sei la do que">
-              <figcaption class="figure-caption">Placa Driver sei la do que</figcaption>
-            </figure>
-
-            <div id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Show Code
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <pre id="code1">
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-*/
-
-
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop function runs over and over again forever
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
-}
-                  </pre>
-                </div>
-
-              </div>
-            </div>
-
-            <header class="text-title-container">
-              <h1 id="secao2" class="text-content-title">Seção 2</h1>
-            </header>
-
-            <p class="page-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <figure class="figure text-center">
-              <img data-src="./img/components/arduino.png" src="./img/components/arduino.png" class="img-rounded" alt="Figura de placa Arduino">
-              <figcaption class="figure-caption">Placa arduino uno</figcaption>
-            </figure>
-
-            <div id="accordion2" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
-                    <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code2"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOwo" aria-expanded="false" aria-controls="collapseOwo">
-                      Show Code
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseOwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
-                  <pre id="code2">
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-*/
-
-
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop function runs over and over again forever
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
-}
-                  </pre>
-                </div>
-
-              </div>
-            </div>
-
+          <div id="arduinoUnoDiv"></div>
 
           </section>
+
         </article>
 
 
@@ -219,6 +111,11 @@ void loop() {
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="./libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript">
+  $(function(){
+    $("#arduinoUnoDiv").load("templates/pageContent/arduinoUNO.html");
+  });
+  </script>
   <!-- Created functions -->
   <script src="./js/generalFunctions.js"></script>
   <script src="./js/pageFix.js"></script>
