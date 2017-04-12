@@ -54,7 +54,7 @@ div.text-custom-hr {
 p.page-paragraph {
   text-indent: 3em;
   text-align: justify;
-  font-size: 18px;
+  font-size: 1.3em;
 }
 
 /* Custom hr, better then hr tag with 100% width */
@@ -184,6 +184,17 @@ div.custom-hr-fluid {
 
 .text-container {
   padding: 20px;
+}
+
+.content-list {
+  font-size: 1.2em;
+  border-left: 6px solid #31708f;
+  border-radius: 4px;
+  margin: 0 2em 2em 2em;
+}
+
+.content-list li {
+  padding: 4px 0;
 }
 
 .figure {
@@ -445,12 +456,20 @@ a.clipboard-copy {
 /* - - - - - - - - - - - - - - - */
 
 @media screen and (max-width: 767px) {
+
   .menu-mb-section-container {
     text-align: center;
   }
+
+  .content-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
+
   .container-open {
     transition: all .5s ease-in-out;
   }

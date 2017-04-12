@@ -1,25 +1,13 @@
 <header class="text-title-container">
-  <h1 id="PonteHDuplaL298N1" class="text-content-title">Ponte H Dupla L298N</h1>
+  <h1 id="PonteHDuplaL298N1" class="text-content-title">Ponte H Dupla CI L298N</h1>
 </header>
 
 <p class="page-paragraph">
-  O Arduino / Genuino Uno tem um polyfuse reinicializável que protege as portas USB do seu computador de shorts e sobrecorrente. Embora a maioria dos computadores forneçam sua própria proteção interna, o fusível fornece uma camada extra de proteção. Se mais de 500 mA for aplicado à porta USB, o fusível quebrará automaticamente a conexão até que o curto ou a sobrecarga seja removido.
-</p>
-
-<header class="text-title-container alert alert-warning">
-  <h2 id="PonteHDuplaL298N2" class="text-content-title">Atenção</h2>
-</header>
-
-<p class="page-paragraph">
-  O Arduino / Genuino Uno tem um polyfuse reinicializável que protege as portas USB do seu computador de shorts e sobrecorrente. Embora a maioria dos computadores forneçam sua própria proteção interna, o fusível fornece uma camada extra de proteção. Se mais de 500 mA for aplicado à porta USB, o fusível quebrará automaticamente a conexão até que o curto ou a sobrecarga seja removido.
-</p>
-
-<header class="text-title-container alert alert-info">
-  <h2 id="PonteHDuplaL298N3" class="text-content-title">Energia</h2>
-</header>
-
-<p class="page-paragraph">
-  A placa pode operar em uma fonte externa de 6 a 20 volts. Se fornecido com menos de 7V, no entanto, o pino 5V pode fornecer menos de cinco volts ea placa pode ficar instável. Se usar mais de 12V, o regulador de tensão pode superaquecer e danificar a placa. A faixa recomendada é de 7 a 12 volts.
+  Este Driver <a target="_blank" href="http://blog.vidadesilicio.com.br/arduino/modulo-ponte-h-l298n-arduino/">Ponte H</a> é um módulo, baseado
+  no chip L298N, construído para controlar cargas indutivas como relés, solenoides, <a target="_blank" href="http://www.ehow.com/about_5076660_definition-dc-motor.html">motores DC</a>
+  e <a target="_blank" href="https://pt.wikipedia.org/wiki/Motor_de_passo">motores de passo</a>. Com este Driver Ponte H
+  L298M é possível controlar independentemente a velocidade e rotação de 2 motores DC ou 1 motor de passo. Possui terminais parafusáveis
+  para fácil instalação e buracos nas extremidades da placa para fixação.
 </p>
 
 <figure class="figure text-center">
@@ -27,6 +15,25 @@
   <figcaption class="figure-caption">Demonstração da placa Ponte H Dupla L298N</figcaption>
 </figure>
 
+<p class="page-paragraph">
+  Para termos uma noção de como funcionam cada porta do módulo CI L298N, iremos conhecer a função de cada pino:
+</p>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/Ponte_H_L298N_map.png" src="./img/components/Ponte_H_L298N_map.png" class="img-rounded" alt="Mapeamento dos pinos da placa Ponte H Dupla L298N">
+  <figcaption class="figure-caption">Mapeamento dos pinos da placa Ponte H Dupla L298N</figcaption>
+</figure>
+
+<ul class="content-list">
+  <li>Motor A e Motor B: Conectores para os dois motores</li>
+  <li>6-35V: Porta para alimentação da placa com tensão entre 6 a 35V.</li>
+  <li>Ativa 5V: Quando jumpeado, a placa utilizará o regulador de tensão integrado para fornecer 5v (na porta 5v) quando a porta 6-35V estiver sendo alimentada por uma tensão entre 6 e 35V. Neste caso, não se deve alimentar a porta 5V pois pode danificar os componentes. A tensão fornecida na porta 5V pode ser usada para alimentar o Arduino, por exemplo.</li>
+  <li>5v: Em casos de não haver fonte de alimentação com mais de 6V podemos alimentar a placa com 5V por esta porta.</li>
+  <li>Ativa MA: Quando jumpeado aciona o motor A com velocidade máxima. Para controlar a velocidade do motor A basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li>Ativa MB: Quando jumpeado aciona o motor B com velocidade máxima. Para controlar a velocidade do motor B basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li>IN1 e IN2:são utilizados para controlar o sentido do motor A;</li>
+  <li>IN3 e IN4: são utilizados para controlar o sentido do motor B;</li>
+</ul>
 
 <div id="accordion2" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -40,25 +47,25 @@
     </div>
     <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
       <pre id="code3">
-/*
-Blink
-Turns on an LED on for one second, then off for one second, repeatedly.
-*/
+        /*
+        Blink
+        Turns on an LED on for one second, then off for one second, repeatedly.
+        */
 
 
-// the setup function runs once when you press reset or power the board
-void setup() {
-// initialize digital pin LED_BUILTIN as an output.
-pinMode(LED_BUILTIN, OUTPUT);
-}
+        // the setup function runs once when you press reset or power the board
+        void setup() {
+          // initialize digital pin LED_BUILTIN as an output.
+          pinMode(LED_BUILTIN, OUTPUT);
+        }
 
-// the loop function runs over and over again forever
-void loop() {
-digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-delay(1000);                       // wait for a second
-digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-delay(1000);                       // wait for a second
-}
+        // the loop function runs over and over again forever
+        void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+          delay(1000);                       // wait for a second
+          digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+          delay(1000);                       // wait for a second
+        }
       </pre>
     </div>
 
