@@ -58,7 +58,6 @@ var modalController = {
     - sourceImage: Id or Object of clicked source image
     - imgSrc: get the src value of image
     */
-    */
     setImgSrc : function(modalImgId, sourceImage) {
 
       var imgSrc = $(sourceImage).attr('src');
