@@ -10,12 +10,25 @@ var menuMb = {
    */
   toggleMenu : function(menuId) {
 
+    var pageContainer = document.getElementById('pageContainer');
+
     if (isJquery(menuId)) {
       $(menuId).addClass('menu-open');
+      $("#pageContainer").addClass('container-open');
+
+      if (window.innerWidth > 768) {
+        pageContainer.style.marginLeft = $(menuId).width() + "px";
+      }
 
     } else {
       var menu = document.getElementById('menuMb');
+
       $(menu).addClass('menu-open');
+      $("#pageContainer").addClass('container-open');
+
+      if (window.innerWidth > 768) {
+        pageContainer.style.marginLeft = $(menu).width() + "px";
+      }
 
     }
 
@@ -31,11 +44,17 @@ var menuMb = {
   */
   closeMenu : function(menuId, menuOpenClass) {
 
+    var pageContainer = document.getElementById('pageContainer');
+
     if (isJquery(menuId)) {
       $(menuId).removeClass(menuOpenClass);
+      $("#pageContainer").removeClass('container-open');
+      pageContainer.style.marginLeft = "0px";
     } else {
       var menu = document.getElementById(menuId);
       $(menu).removeClass(menuOpenClass);
+      $("#pageContainer").removeClass('container-open');
+      pageContainer.style.marginLeft = "0px";
     }
 
   }

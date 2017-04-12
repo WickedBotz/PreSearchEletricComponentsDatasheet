@@ -23,9 +23,25 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+
 <body>
 
+  <!-- - - - - - - - - -  NAVIGATION BAR - - - - - - - - - - -->
+
+  <header id="navContainer" class="nav-container fixed">
+    <nav class="nav-bar" role="navigation">
+      <button id="menu-mb-button" class="menu-mb-button">
+        <i id="buttonFa" class="fa fa-bars fa-3" aria-hidden="true"><span>&nbspMenu</span></i>
+      </button>
+      <div class="brand-name pull-right">
+        <span class="text-center"><i class="fa fa-rocket" aria-hidden="true"></i>&nbspWickedBotz</span>
+      </div>
+    </nav>
+  </header>
+
+
   <!-- - - - - - - - - -  IMG MODAL - - - - - - - - - - -->
+
   <figure id="imageModalContainer" class="modal-image-container hidden text-center">
     <div class="modal-content">
       <img src="" id="modalImage" class="modal-img" alt="">
@@ -33,53 +49,52 @@
     </div>
 
   </figure>
-  <!-- - - - - - - - - -  IMG MODAL - - - - - - - - - - -->
+
 
   <!-- - - - - - - - - -  MENU MOBILE - - - - - - - - - - -->
+
   <menu id="menuMb" class="menu col-xs-12 col-sm-3 col-md-2 col-lg-2">
 
+
     <!-- - - - - - - - - -  MENU MOBILE HEADER - - - - - - - - - - -->
+
     <header class="nav-container menu-mb-header">
       <span class="menu-mb-title">Sessões</span>
       <button id="closeButtom" class="pull-right close-buttom">
         <i class="fa fa-times fa-3" aria-hidden="true"></i>
       </button>
     </header>
-    <!-- - - - - - - - - -  MENU MOBILE HEADER - - - - - - - - - - -->
+
 
     <div class="custom-hr center-block"></div>
 
+
     <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
+
     <aside class="menu-mb-section-container">
       <ul class="list-group">
         <a href="#arduinoUno"><li class="list-group-item">Arduino</li></a>
       </ul>
     </aside>
-    <!-- - - - - - - - - -  MENU MOBILE LINK LIST - - - - - - - - - - -->
+
 
   </menu>
-  <!-- - - - - - - - - -  MENU MOBILE - - - - - - - - - - -->
+
 
   <!-- - - - - - - - - -  PAGE CONTAINER - - - - - - - - - - -->
+
   <main id="pageContainer" class="container-fluid">
 
-    <header id="navContainer" class="nav-container fixed">
-      <nav class="nav-bar" role="navigation">
-        <button id="menu-mb-button" class="menu-mb-button">
-          <i id="buttonFa" class="fa fa-bars fa-3" aria-hidden="true"><span>&nbspMenu</span></i>
-        </button>
-        <div class="brand-name pull-right">
-          <span class="text-center"><i class="fa fa-rocket" aria-hidden="true"></i>&nbspWickedBotz</span>
-        </div>
-      </nav>
-    </header>
+
+
+
+    <!-- - - - - - - - - -  TEXT CONTAINER - - - - - - - - - - -->
 
     <section id="pageTextContainer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
       <div class="row">
 
-
         <article class="text-left">
+
           <header class="text-center">
             <h1 class="text-title">Datasheet</h1>
             <h1 class="title-description">Componentes Elétricos</h1>
@@ -87,20 +102,22 @@
           </header>
 
           <section class="text-container" id="datasheetContent">
-
-            <section id="arduinoUnoDiv"></section>
-
+            <section id="arduinoUno" class="section"></section>
+            <section id="PonteHDuplaL298N" class="section"></section>
+            <section id="pololuDualVNH5019MotorDriver" class="section"></section>
           </section>
 
         </article>
 
-
       </div>
-
     </section>
-  </main>
-  <!-- - - - - - - - - -  PAGE CONTAINER - - - - - - - - - - -->
 
+  </main>
+
+
+
+
+  <!-- - - - - - - - - - PAGE FOOTER - - - - - - - - - -->
 
   <div id="footer-container" class="container-fluid text-center">
     <footer id="pageFooter" class="page-footer">
@@ -109,18 +126,27 @@
     </footer>
   </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="./libs/jquery/jquery-3.2.0.min.js"></script>
 
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+  <!-- - - - - - - - - - SCRIPTS - - - - - - - - - -->
+
+  <!-- jQuery -->
+  <script src="./libs/jquery/jquery-3.2.0.min.js"></script>
+  <!-- Bootstrap -->
   <script src="./libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
+  <!-- Load Content Function -->
   <script type="text/javascript">
   $(function(){
-    $("#arduinoUnoDiv").load("./partials/arduinoUNO.html");
+    $("#arduinoUno").load("./partials/arduinoUNO.html");
+    $("#PonteHDuplaL298N").load("./partials/PonteHDuplaL298N.html");
+    $("#pololuDualVNH5019MotorDriver").load("./partials/pololuDualVNH5019MotorDriver.html");
     $("#scripts").load("./partials/scripts.html");
+    
   });
   </script>
+
 
   <!-- SCRIPTS CONTAINER -->
 
@@ -128,6 +154,6 @@
 
   <!-- SCRIPTS CONTAINER -->
 
-</body>
 
+</body>
 </html>

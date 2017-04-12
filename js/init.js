@@ -16,6 +16,13 @@ $(document).ready(function() {
   pageFix.adjustContentMargin();
 });
 
+/* Adjust the main content margin left according menu mobile width while risizing */
+$(window).resize(function() {
+  if ($("#menuMb").hasClass('menu-open')) {
+    pageFix.adjustMainContentMarginLeft('pageContainer', 'menuMb');
+  }
+});
+
 /* Menu mobile interaction - Show Menu */
 $('#menu-mb-button').click(function() {
   menuMb.toggleMenu('menuMb');

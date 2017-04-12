@@ -25,6 +25,22 @@ var pageFix = {
     var height = footerContainer.clientHeight;
 
     pageContainer.style.marginBottom = height + "px";
+  },
+
+  /*  pageFix.adjustMainContentMarginLeft():
+
+      Description: Adjust the margin left of main page container.
+
+     - var pageContainer: Page container reference, that include all middle page content.
+
+  */
+  adjustMainContentMarginLeft : function(mainContentId, menuMobileId) {
+
+    var pageContainer = document.getElementById(mainContentId);
+    var menuMobile = document.getElementById(menuMobileId);
+
+    pageContainer.style.marginLeft = $(menuMobile).width() + "px";
+
   }
 
 }
