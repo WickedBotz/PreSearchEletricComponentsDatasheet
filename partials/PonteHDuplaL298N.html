@@ -25,14 +25,14 @@
 </figure>
 
 <ul class="content-list">
-  <li>Motor A e Motor B: Conectores para os dois motores</li>
-  <li>6-35V: Porta para alimentação da placa com tensão entre 6 a 35V.</li>
-  <li>Ativa 5V: Quando jumpeado, a placa utilizará o regulador de tensão integrado para fornecer 5v (na porta 5v) quando a porta 6-35V estiver sendo alimentada por uma tensão entre 6 e 35V. Neste caso, não se deve alimentar a porta 5V pois pode danificar os componentes. A tensão fornecida na porta 5V pode ser usada para alimentar o Arduino, por exemplo.</li>
-  <li>5v: Em casos de não haver fonte de alimentação com mais de 6V podemos alimentar a placa com 5V por esta porta.</li>
-  <li>Ativa MA: Quando jumpeado aciona o motor A com velocidade máxima. Para controlar a velocidade do motor A basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
-  <li>Ativa MB: Quando jumpeado aciona o motor B com velocidade máxima. Para controlar a velocidade do motor B basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
-  <li>IN1 e IN2:são utilizados para controlar o sentido do motor A;</li>
-  <li>IN3 e IN4: são utilizados para controlar o sentido do motor B;</li>
+  <li><strong>Motor A e Motor B:</strong> Conectores para os dois motores</li>
+  <li><strong>6-35V:</strong> Porta para alimentação da placa com tensão entre 6 a 35V.</li>
+  <li><strong>Ativa 5V:</strong> Quando jumpeado, a placa utilizará o regulador de tensão integrado para fornecer 5v (na porta 5v) quando a porta 6-35V estiver sendo alimentada por uma tensão entre 6 e 35V. Neste caso, não se deve alimentar a porta 5V pois pode danificar os componentes. A tensão fornecida na porta 5V pode ser usada para alimentar o Arduino, por exemplo.</li>
+  <li><strong>5v:</strong> Em casos de não haver fonte de alimentação com mais de 6V podemos alimentar a placa com 5V por esta porta.</li>
+  <li><strong>Ativa MA:</strong> Quando jumpeado aciona o motor A com velocidade máxima. Para controlar a velocidade do motor A basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li><strong>Ativa MB:</strong> Quando jumpeado aciona o motor B com velocidade máxima. Para controlar a velocidade do motor B basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li><strong>IN1 e IN2:</strong> são utilizados para controlar o sentido do motor A;</li>
+  <li><strong>IN3 e IN4:</strong> são utilizados para controlar o sentido do motor B;</li>
 </ul>
 
 <div id="accordion2" role="tablist" aria-multiselectable="true">
@@ -47,27 +47,117 @@
     </div>
     <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
       <pre id="code3">
-        /*
-        Blink
-        Turns on an LED on for one second, then off for one second, repeatedly.
-        */
+// Definições dos pinos do motor esquerdo
+#define pino_1_motor_A 4
+#define pino_2_motor_A 5
+// Definições dos pinos do motor Direito
+#define pino_1_motor_B 7
+#define pino_2_motor_B 8
 
+/*
+Definição das porta de potencia que receberão o valor entre
+0 (0v) e 255 (5v) caso seja ligado o motor para receber alimentação
+do arduino. Caso receba alimentação externa, este receberá alimentação
+entre 0v e a voltagem máxima da fonte para a placa
+*/
+// Potência do motor esquerdo
+#define potenciaMotorA 3
+// Potência do motor direito
+#define potenciaMotorB 6
 
-        // the setup function runs once when you press reset or power the board
-        void setup() {
-          // initialize digital pin LED_BUILTIN as an output.
-          pinMode(LED_BUILTIN, OUTPUT);
-        }
+void setup() {
 
-        // the loop function runs over and over again forever
-        void loop() {
-          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-          delay(1000);                       // wait for a second
-          digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-          delay(1000);                       // wait for a second
-        }
+  // Controle da Direção Esquerdo
+  pinMode(pino_1_motor_A, OUTPUT);
+  pinMode(pino_2_motor_A, OUTPUT);
+  // Controle da Direção Direito
+  pinMode(pino_1_motor_B, OUTPUT);
+  pinMode(pino_2_motor_B, OUTPUT);
+  // Potência Esquerda
+  pinMode(potenciaMotorA, OUTPUT);
+  // Potência Direita
+  pinMode(potenciaMotorB, OUTPUT);
+
+}
+
+void loop() {
+
+  direcaoMotor('f', 255);
+  delay(1000);
+  direcaoMotor('t', 255);
+  delay(1000);
+  direcaoMotor('e', 255);
+  delay(1000);
+  direcaoMotor('d', 255);
+  delay(1000);
+
+}
+
+/*
+Define a direção do motor
+
+OBS: A direção do motor pode ser invertida de acordo com as
+configurações abaixo. Isso ocorre devido a ordem dos cabos
+colocados nos terminais parafusáveis.
+
+*/
+void direcaoMotor(char opcao, int velocidade) {
+
+  switch(opcao) {
+    case 'f':
+    digitalWrite(pino_1_motor_A, HIGH);
+    digitalWrite(pino_2_motor_A, LOW);
+    digitalWrite(pino_1_motor_B, LOW);
+    digitalWrite(pino_2_motor_B, HIGH);
+    analogWrite(potenciaMotorA, velocidade);
+    analogWrite(potenciaMotorB, velocidade);
+    break;
+
+    case 't':
+    digitalWrite(pino_1_motor_A, LOW);
+    digitalWrite(pino_2_motor_A, HIGH);
+    digitalWrite(pino_1_motor_B, HIGH);
+    digitalWrite(pino_2_motor_B, LOW);
+    analogWrite(potenciaMotorA, velocidade);
+    analogWrite(potenciaMotorB, velocidade);
+    break;
+
+    case 'e':
+    digitalWrite(pino_1_motor_A, HIGH);
+    digitalWrite(pino_2_motor_A, LOW);
+    digitalWrite(pino_1_motor_B, HIGH);
+    digitalWrite(pino_2_motor_B, LOW);
+    analogWrite(potenciaMotorA, velocidade);
+    analogWrite(potenciaMotorB, velocidade);
+    break;
+
+    case 'd':
+    digitalWrite(pino_1_motor_A, LOW);
+    digitalWrite(pino_2_motor_A, HIGH);
+    digitalWrite(pino_1_motor_B, LOW);
+    digitalWrite(pino_2_motor_B, HIGH);
+    analogWrite(potenciaMotorA, velocidade);
+    analogWrite(potenciaMotorB, velocidade);
+    break;
+
+    default:
+    digitalWrite(pino_1_motor_A, LOW);
+    digitalWrite(pino_2_motor_A, LOW);
+    digitalWrite(pino_1_motor_B, LOW);
+    digitalWrite(pino_2_motor_B, LOW);
+    analogWrite(potenciaMotorA,  LOW);
+    analogWrite(potenciaMotorB,  LOW);
+    break;
+  }
+
+}
+
       </pre>
     </div>
 
   </div>
 </div>
+
+<p class="page-paragraph">
+  Existe formas melhoradas para realizar a ação 
+</p>
