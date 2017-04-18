@@ -1,0 +1,39 @@
+/* - - - - - - - - - - - - - - - */
+/* - - - - Media Query - - - - - */
+/* - - - - - - - - - - - - - - - */
+
+/* Mobile width definitions */
+@media screen and (max-width: 767px) {
+
+  .menu-mb-section-container {
+    text-align: center;
+  }
+
+  .content-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Page title container definitions - contains text-content-title */
+  .text-title-container {
+    padding: 6ch 6ch;
+  }
+
+  /* Text container definitions */
+  .text-container {
+    padding: 1ch 1ch;
+  }
+
+}
+
+/* Mobile above definitions */
+@media screen and (min-width: 768px) {
+
+  .container-open {
+    transition: all .5s ease-in-out;
+  }
+}
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Media Query - - - - - */
+/* - - - - - - - - - - - - - - - */

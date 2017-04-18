@@ -1,0 +1,89 @@
+/* Definitions to modal container showed on image click */
+.modal-image-container {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, .9);
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Definitions to modal text content showed on image click */
+.modal-content {
+  position: relative;
+  width: 100%;
+  height:auto;
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+
+/* Image caption definitions, that contains a image description */
+.figure-caption {
+  font-size: .8rem;
+  color: rgb(226, 178, 20);
+}
+
+/* Image inside modal definitions */
+.modal-img {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Figure container definitions */
+.figure {
+  transition: all .3s ease-in-out;
+  padding: 5ch 0 10ch 0;
+}
+
+/* Transition definitions on image at modal and figure container */
+.figure img,
+.modal-image-container img {
+  transition: all .3s ease-in-out;
+}
+
+/* Image hover definitions on image at modal and figure container */
+.figure img:hover,
+.modal-image-container img:hover {
+  transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+
+/* - - - - - - Modal - - - - - - */
+
+/* Image animation on modal opening definitions */
+#imageModalContainer img {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1s;
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+
+/* - - - - - - Modal - - - - - - */
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Keyframes-  - - - - - */
+/* - - - - - - - - - - - - - - - */
+
+/* Zoom animation */
+@-webkit-keyframes zoom {
+  0% {-webkit-transform: scale(0)}
+  50% {-webkit-transform: scale(1.1)}
+  100% {-webkit-transform: scale(1)}
+}
+
+/* Zoom animation */
+@keyframes zoom {
+  0% {-webkit-transform: scale(0)}
+  50% {-webkit-transform: scale(1.1)}
+  100% {-webkit-transform: scale(1)}
+}
+
+/* - - - - - - - - - - - - - - - */
+/* - - - - Keyframes - - - - - - */
+/* - - - - - - - - - - - - - - - */

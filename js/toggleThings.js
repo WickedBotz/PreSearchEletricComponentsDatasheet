@@ -14,6 +14,7 @@ var toggleThings = {
   - Class: ".className"
   - Tag: "tagName"
   - Element Object: HTML object
+
   */
   fadeElementIn : function(elementLabel, maxWidth, interval) {
 
@@ -34,6 +35,7 @@ var toggleThings = {
   - Class: ".className"
   - Tag: "tagName"
   - Element Object: HTML object
+
   */
   fadeElementOut : function(elementLabel, maxWidth, interval) {
 
@@ -52,6 +54,7 @@ var toggleThings = {
     - lastScrollValue: The last user scroll value - It's a global variable difined on init.js
     - navbarId: Id or element object of the navbar
     - navbar: receive a navbar reference if the id is javascript type
+    
   */
   navbarFadeInOut: function(navbarId) {
 

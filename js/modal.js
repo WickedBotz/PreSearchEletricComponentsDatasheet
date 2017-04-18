@@ -12,6 +12,7 @@ var modalController = {
   imgModalController : new Object({
 
     /*
+
     This function show the image modal, and call some functions to set
     modal image source and figCaption
 
@@ -20,6 +21,7 @@ var modalController = {
     - modalImgId: id of img inside to modal
     - figCaptionId: id of figCaption inside the modal
     - modal: id of modal container
+
     */
     imgModal : function(img, modalImgId, figCaptionId, modal) {
 
@@ -29,6 +31,7 @@ var modalController = {
       $(modal).removeClass('hidden');
 
     },
+
 
     // Function to close modal - modalId: Id of modal container
     imgModalClose : function(modalId) {
@@ -42,6 +45,7 @@ var modalController = {
     - modalCaption: The id or Object of figcaption inside modal
     - modalImgId: Id or Object of image inside modal
     - caption: get the alt value of figcaption
+
     */
     setImgCaption : function(modalCaption, modalImgId) {
 
@@ -50,6 +54,7 @@ var modalController = {
 
     },
 
+
     /*
     Defines de source of the image insiede modal
 
@@ -57,6 +62,7 @@ var modalController = {
     - modalImgId: The id or Object of image inside modal
     - sourceImage: Id or Object of clicked source image
     - imgSrc: get the src value of image
+
     */
     setImgSrc : function(modalImgId, sourceImage) {
 

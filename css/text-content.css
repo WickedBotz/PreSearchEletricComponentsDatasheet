@@ -1,0 +1,68 @@
+/* Page title definitions */
+.text-content-title {
+  transition: all .1s;
+  font-size: 1.4rem;
+  border-bottom: solid 2px #111;
+  display: inline;
+  height: auto;
+}
+
+/* Page title definitions on hovered */
+.text-content-title:hover {
+  transition: all .1s;
+  border-bottom: solid 4px;
+}
+
+/* Page title container definitions - contains text-content-title */
+.text-title-container {
+  padding: 4ch 4ch;
+}
+
+/* Main Page Header definitions */
+.text-title {
+  font-size: 2.6rem;
+}
+
+/* Main Page Header Descriptions definitions */
+.title-description {
+  font-size: 1rem;
+}
+
+/* Text container definitions */
+.text-container {
+  padding: 5ch 10ch;
+}
+
+/* list container definitions on page text content */
+.content-list {
+  font-size: .8rem;
+  border-left: 6px solid #31708f;
+  border-radius: 4px;
+  margin: 0 2ch 2ch 2ch;
+}
+
+/* list inside content-list definitions on page text content */
+.content-list li {
+  padding: 1ch 0;
+}
+
+
+/* - - - page container - - - */
+
+/* Text Container */
+/* Page text container definitions - Contains all page text content */
+#pageTextContainer {
+  margin-top: 100px;
+}
+
+/* Main Container */
+/* Page container definitions - Contains all page content */
+#pageContainer {
+  transition: all .5s ease-in-out;
+  background-color: #FFF;
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  height: auto;
+}
+/* - - - page container - - - */

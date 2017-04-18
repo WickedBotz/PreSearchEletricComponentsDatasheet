@@ -6,7 +6,12 @@ This file contains all functions that manipule all page interaction
 var menuMb = {
 
   /*  toggleMenu();
-  place a class that open menu mobile, where menuId be the menu's ID
+  place a class that open menu mobile.
+
+  [ Variables ]:
+  - menuId: Menu mobile ID
+  - pageContainer: page main container reference
+
    */
   toggleMenu : function(menuId) {
 
@@ -36,11 +41,12 @@ var menuMb = {
 
   /* closeMenu(menuId, menuOpenClass);
 
-  menuId: Recebe um valor em string do nome da id. Pode ser tanto em sintax:
-  'idMenu' ou '#idMenu'
+  Function that close menu mobile
 
-  menuOpenClass: Recebe um valor em string referente ao nome da menu open and
-  close Class
+  [ Variables ]:
+  - menuId: Get menu mobile id. ('idMenu' or '#idMenu')
+  - menuOpenClass: Get menu-mobile class that make menu open
+
   */
   closeMenu : function(menuId, menuOpenClass) {
 
@@ -60,6 +66,12 @@ var menuMb = {
   }
 
 }
+
+
+
+
+
+
 
 // Gradual Scroll interaction
 var scrollInteraction = {

@@ -1,0 +1,50 @@
+/* brand name definitions */
+.brand-name {
+  position: relative;
+  display: inline;
+  float: right;
+  margin-right: 10px;
+}
+
+/* Page logo definitions */
+.navbar-brand {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page navbar container definitions */
+.nav-container {
+  transform: translateY(0);
+  transition: all .5s ease-in-out;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navbar animation class definition - Hide navbar off page */
+.nav-bar-offpage {
+  transform: translateY(-100%);
+  transition: all .5s ease-in-out;
+}
+
+/* - - - - Nav Bar - - - - */
+/* Navbar container definitions */
+#navContainer {
+  box-shadow: 0 0 5px 0 #000;
+}
+
+/* Navbar definitions */
+#navbar {
+  position: relative;
+  margin: 0;
+  height: auto;
+  padding: 16px;
+}
+/* - - - - Nav Bar - - - - */

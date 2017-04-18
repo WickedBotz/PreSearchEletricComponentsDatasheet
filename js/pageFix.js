@@ -32,6 +32,7 @@ var pageFix = {
       Description: Adjust the margin left of main page container.
 
      - var pageContainer: Page container reference, that include all middle page content.
+     - var menuMobile: Menu mobile reference
 
   */
   adjustMainContentMarginLeft : function(mainContentId, menuMobileId) {

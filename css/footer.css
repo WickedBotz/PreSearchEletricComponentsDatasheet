@@ -1,0 +1,49 @@
+/* Footer copyrights definitions */
+.copyright {
+  color: #DDD;
+  font-size: 1em;
+  display: block;
+  width: 100%
+}
+
+/* Footer copyrights container definitions */
+.copyright-container {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+}
+
+/* - - - Footer - - - */
+/* Footer definitions */
+#footer-container {
+  background-color: rgba(240, 173, 78, 0.9);
+  /*
+  BGCOLORS:
+  - rgba(13, 217, 209, 0.180392)
+  - rgba(161, 110, 133, 0.227451)
+  - rgba(237, 184, 34, 0.721569)
+  - rgba(101, 254, 246, 0.54902)
+  - rgba(168, 80, 180, 0.286275)
+  - rgba(84, 141, 168, 0.74902)
+  - rgba(234, 112, 67, 0.768627)
+  - rgba(82, 163, 147, 0.341176)
+  - rgba(103, 67, 158, 0.109804)
+  - rgba(23, 75, 190, 0.141176)
+  - rgba(232, 198, 83, 0.517647)
+  - rgba(68, 172, 107, 0.278431)
+  - rgba(1, 159, 198, 0.411765)
+  - rgba(158, 80, 181, 0.00392157)
+  - rgba(51, 122, 183, 1)
+  - rgba(240, 173, 78, 1)
+  - rgba(236, 151, 31, 1)
+  */
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  height: 30%;
+  margin: 0;
+  z-index: -1;
+}
+/* - - - Footer - - - */
