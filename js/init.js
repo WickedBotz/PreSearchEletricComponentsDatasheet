@@ -4,8 +4,8 @@
   executed or called on html. This will need all script dependences.
 */
 
-
-
+//---- elevateZoom init ---///
+$(".img-rounded").elevateZoom();
 
 
 
