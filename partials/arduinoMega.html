@@ -1,0 +1,71 @@
+<header class="text-title-container">
+  <h1 id="arduinoUno1" class="text-content-title">Arduino Uno</h1>
+</header>
+
+<p>Para projetos fodoes</p>
+
+<p class="page-paragraph">
+  A placa Arduino Mega 2560 é mais uma placa da plataforma Arduino que possui recursos bem interessantes para prototipagem e projetos mais elaborados. Baseada no microcontrolador ATmega2560, possui 54 pinos de entradas e saídas digitais onde 15 destes podem ser utilizados como saídas PWM. Possui 16 entradas analógicas, 4 portas de comunicação serial. Além da quantidade de pinos, ela conta com maior quantidade de memória que Arduino UNO, sendo uma ótima opção para projetos que necessitem de muitos pinos de entradas e saídas além de memória de programa com maior capacidade. A seguir serão apresentadas as suas características construtivas, passando pelos principais recursos que essa placa apresenta. Você conhecerá o poder dessa placa!.
+</p>
+
+<header class="alert alert-info">
+  <h2 id="arduinoUno3" class="text-content-title">Energia</h2>
+</header>
+
+<p class="page-paragraph">
+  Como na placa Arduino UNO, a alimentação externa é feita através do conector Jack com positivo no centro, onde o valor de tensão da fonte externa deve estar entre os limites 6V. a 20V., porém se alimentada com uma tensão abaixo de 7V., a tensão de funcionamento da placa, que no Arduino MEGA 2560 é de 5V, pode ficar instável e quando alimentada com tensão acima de 12V, o regulador de tensão da placa pode sobreaquecer e danificar a placa. Dessa forma, é recomendado para tensões de fonte externa valores de 7V. a 12V.
+</p>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/Arduino-Mega-2560.jpg" src="./img/components/Arduino-Mega-2560.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
+  <figcaption class="figure-caption">Demonstração da placa Arduino Mega</figcaption>
+</figure>
+
+<p class="page-paragraph">
+  <strong>VIN :</strong> pino para alimentar a placa através de shield ou bateria externa. Quando a placa é alimentada através do conector Jack a tensão da fonte estará nesse pino.
+</p>
+
+<div id="accordion1" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+          Show Code Aruino
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
+      <pre id="code1">
+        /*
+        Blink
+        Turns on an LED on for one second, then off for one second, repeatedly.
+        */
+
+
+        // the setup function runs once when you press reset or power the board
+        void setup() {
+          // initialize digital pin LED_BUILTIN as an output.
+          pinMode(LED_BUILTIN, OUTPUT);
+        }
+
+        // the loop function runs over and over again forever
+        void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+          delay(1000);                       // wait for a second
+          digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+          delay(1000);                       // wait for a second
+        }
+      </pre>
+    </div>
+
+  </div>
+</div>
+
+<header class="alert alert-warning">
+  <h3 id="arduinoUno2" class="text-content-title">Referencias</h3>
+</header>
+
+<ul class="content-list">
+  <li>  <a href="https://www.embarcados.com.br/arduino-mega-2560/">https://www.embarcados.com.br/arduino-mega-2560/</a>  </li>
+</ul>

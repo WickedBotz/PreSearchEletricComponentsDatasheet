@@ -1,0 +1,79 @@
+<header class="text-title-container">
+  <h1 id="arduinoNano" class="text-content-title">Arduino Nano</h1>
+</header>
+
+<p>Usado em projetos que precisam ser compactos.</p>
+
+<p class="page-paragraph">
+  O Arduino Nano é um pequeno, completo, e breadboard-friendly placa baseada no ATmega328 (Arduino Nano 3.x). Tem mais ou menos a mesma funcionalidade do Arduino Duemilanove, mas em um pacote diferente. Ele tem apenas uma tomada de alimentação CC, e funciona com um cabo USB Mini-B em vez de um padrão.
+</p>
+
+<ul class="content-list">
+  <li><strong>CPU:</strong> Microcontrolador Atmel Atmega 328</li>
+  <li><strong>Tensão minima de Alimentação: </strong> 3.3V</li>
+  <li><strong>Tensão Máxima de Alimentação:</strong> 20V</li>
+  <li><strong>Tensão Ideal para Alimentação:</strong> 7V – 12V</li>
+  <li><strong>Pinos Digitais I/O:</strong> 14 pinos, no qual 6 destes também servem para saídas PWM.14 pinos, no qual 6 destes também servem para saídas PWM</li>
+  <li><strong>Pinos de Entrada Analógica:</strong> 8 entradas com 10 bits de resolução</li>
+  <li><strong>Corrente DC Por Pino I/O:</strong> 40mA</li>
+  <li><strong>Memoria Flash: </strong> 16 Kb, sendo que 2 Kb são utilizados pelo bootloader</li>
+  <li><strong>SRAM:</strong> 2 Kb</li>
+  <li><strong>EEPROM:</strong> 1Kb</li>
+  <li><strong>Velocidade de Clock:</strong> 16 MHz</li>
+</ul>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/arduino-nano.jpg" src="./img/components/arduino-nano.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
+  <figcaption class="figure-caption">Demonstração da placa Arduino Nano</figcaption>
+</figure>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/arduiniNanoD.jpg" src="./img/components/arduiniNanoD.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
+  <figcaption class="figure-caption">Datashet Arduino Nano</figcaption>
+</figure>
+
+
+<div id="accordion1" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+          Show Code Aruino
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOwo">
+      <pre id="code1">
+        /*
+        Blink
+        Turns on an LED on for one second, then off for one second, repeatedly.
+        */
+
+
+        // the setup function runs once when you press reset or power the board
+        void setup() {
+          // initialize digital pin LED_BUILTIN as an output.
+          pinMode(LED_BUILTIN, OUTPUT);
+        }
+
+        // the loop function runs over and over again forever
+        void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+          delay(1000);                       // wait for a second
+          digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+          delay(1000);                       // wait for a second
+        }
+      </pre>
+    </div>
+
+  </div>
+</div>
+
+<header class="alert alert-warning">
+  <h3 id="arduinoUno2" class="text-content-title">Referencias</h3>
+</header>
+<ul class="content-list">
+  <li>  <a href="https://www.arduino.cc/en/Main/ArduinoBoardNano">https://www.arduino.cc/en/Main/ArduinoBoardNano</a>  </li>
+  <li><a href="http://blog.fazedores.com/arduino-nano-3-0/">http://blog.fazedores.com/arduino-nano-3-0/</a>   </li>
+</ul>
