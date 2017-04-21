@@ -1,5 +1,5 @@
 /*
-  This file contais all functions that use or manipule modals
+This file contais all functions that use or manipule modals
 */
 
 /* This object contains all functions to control every types of modals */
@@ -33,10 +33,17 @@ var modalController = {
     },
 
 
+
+
     // Function to close modal - modalId: Id of modal container
     imgModalClose : function(modalId) {
       $(modalId).addClass('hidden');
     },
+
+
+
+
+
 
     /*
     Defines de figcaption of the image inside modal
@@ -53,6 +60,11 @@ var modalController = {
       $(modalCaption).html(caption);
 
     },
+
+
+
+
+
 
 
     /*
@@ -73,5 +85,4 @@ var modalController = {
 
   })
 
-
-}
+};

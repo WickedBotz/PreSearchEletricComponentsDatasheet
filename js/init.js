@@ -4,11 +4,6 @@
   executed or called on html. This will need all script dependences.
 */
 
-//---- elevateZoom init ---///
-$(".img-rounded").elevateZoom();
-
-
-
 
 // - - - - - - Global Vars - - - - - -//
 
@@ -96,8 +91,21 @@ $('.menu-mb-section-container a').click(function(event) {
 
 
 /* Image modal, thats show it on image click */
-$('img').click(function() {
-  modalController.imgModalController.imgModal(this, '#modalImage', '#figCaption', '#imageModalContainer');
+// $('img').click(function() {
+//   modalController.imgModalController.imgModal(this, '#modalImage', '#figCaption', '#imageModalContainer');
+// });
+
+
+
+
+
+
+
+/* elevateZoom init */
+$("img").elevateZoom({
+  zoomType   : "inner",
+  cursor     : "crosshair",
+  scrollZoom : true
 });
 
 
