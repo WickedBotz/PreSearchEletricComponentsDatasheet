@@ -38,7 +38,10 @@
 /* Figure container definitions */
 .figure {
   transition: all .3s ease-in-out;
-  padding: 5ch 0 10ch 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5ch 5ch;
 }
 
 /* Transition definitions on image at modal and figure container */
@@ -52,6 +55,11 @@
 .modal-image-container img:hover {
   transition: all .3s ease-in-out;
   transform: scale(1.1, 1.1);
+}
+
+/* Jquery zoom definitions */
+.zoomWindow {
+  background-color: #FFF;
 }
 
 /* - - - - - - Modal - - - - - - */
