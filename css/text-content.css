@@ -15,7 +15,7 @@
 
 /* Page title container definitions - contains text-content-title */
 .text-title-container {
-  padding: 4ch 4ch;
+  padding: 1ch 1ch;
 }
 
 /* Main Page Header definitions */
@@ -33,6 +33,17 @@
   padding: 5ch 10ch;
 }
 
+/* page paragraph definitions */
+p.page-paragraph, p {
+  text-indent: 4ch;
+  text-align: justify;
+  font-size: 0.8rem;
+}
+
+.text-content-title, p, .content-list {
+  color: #555;
+}
+
 /* list container definitions on page text content */
 .content-list {
   font-size: .8rem;
@@ -42,8 +53,8 @@
 }
 
 /* list inside content-list definitions on page text content */
-.content-list li {
-  padding: 1ch 0;
+.content-list strong {
+  border-bottom: 2px solid;
 }
 
 

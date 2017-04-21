@@ -27,13 +27,31 @@
 <ul class="content-list">
   <li><strong>Motor A e Motor B:</strong> Conectores para os dois motores</li>
   <li><strong>6-35V:</strong> Porta para alimentação da placa com tensão entre 6 a 35V.</li>
-  <li><strong>Ativa 5V:</strong> Quando jumpeado, a placa utilizará o regulador de tensão integrado para fornecer 5v (na porta 5v) quando a porta 6-35V estiver sendo alimentada por uma tensão entre 6 e 35V. Neste caso, não se deve alimentar a porta 5V pois pode danificar os componentes. A tensão fornecida na porta 5V pode ser usada para alimentar o Arduino, por exemplo.</li>
+  <li><strong>Ativa 5V:</strong> Quando jumpeado, a placa utilizará o regulador de tensão integrado para fornecer 5v (na porta 5v)
+  quando a porta 6-35V estiver sendo alimentada por uma tensão entre 6 e 35V. Neste caso, não se deve alimentar a porta 5V pois pode
+  danificar os componentes. A tensão fornecida na porta 5V pode ser usada para alimentar o Arduino, por exemplo.</li>
   <li><strong>5v:</strong> Em casos de não haver fonte de alimentação com mais de 6V podemos alimentar a placa com 5V por esta porta.</li>
-  <li><strong>Ativa MA:</strong> Quando jumpeado aciona o motor A com velocidade máxima. Para controlar a velocidade do motor A basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
-  <li><strong>Ativa MB:</strong> Quando jumpeado aciona o motor B com velocidade máxima. Para controlar a velocidade do motor B basta remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li><strong>Ativa MA:</strong> Quando jumpeado aciona o motor A com velocidade máxima. Para controlar a velocidade do motor A basta
+  remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
+  <li><strong>Ativa MB:</strong> Quando jumpeado aciona o motor B com velocidade máxima. Para controlar a velocidade do motor B basta
+  remover o jumper e alimentar o pino com uma tensão entre 0 e 5v, onde 0V é a velocidade mínima (parado) e 5V a velocidade máxima.</li>
   <li><strong>IN1 e IN2:</strong> são utilizados para controlar o sentido do motor A;</li>
   <li><strong>IN3 e IN4:</strong> são utilizados para controlar o sentido do motor B;</li>
 </ul>
+
+<p class="page-paragraph">
+  Para exemplicar o uso do driver, pegamos como o exemplo a figura abaixo, definindo as conexões de cabos do motor, driver e arduino.
+</p>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/exemplo-integracao-com-arduino.png" src="./img/components/exemplo-integracao-com-arduino.png" class="img-rounded" alt="Demonstração da placa Ponte H Dupla L298N">
+  <figcaption class="figure-caption">Demonstração de conexão dos cabos (<a href="http://blog.vidadesilicio.com.br/arduino/modulo-ponte-h-l298n-arduino/" target="_blank">Referênica</a>)</figcaption>
+</figure>
+
+<p class="page-paragraph">
+  O código para testar a representação da imagem acima segue abaixo, porém com definições de conexão diferenciadas, incluindo o controle
+  de potência do motor nas portas PWM.
+</p>
 
 <div id="accordion2" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -159,6 +177,6 @@ void direcaoMotor(char opcao, int velocidade) {
 </div>
 
 <p class="page-paragraph">
-  Existe formas melhoradas para realizar a ação de movimento do motor, com bibliotecas otimizadas e ágeis, mas
-  estas não serão tratadas neste datasheet.
+  Existe formas melhoradas para realizar a ação de movimento do motor, com bibliotecas otimizadas
+  e ágeis. Para mais informações, use como base esse <a href="https://goo.gl/8YQqCT" target="_blank">LINK</a>
 </p>

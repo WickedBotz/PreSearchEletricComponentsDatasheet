@@ -55,13 +55,6 @@ div.text-custom-hr {
   margin-bottom: 20px;
 }
 
-/* page paragraph definitions */
-p.page-paragraph, p {
-  text-indent: 4ch;
-  text-align: justify;
-  font-size: 0.8rem;
-}
-
 /* Custom hr, better then hr tag with 100% width */
 div.custom-hr-fluid {
   height: 0;

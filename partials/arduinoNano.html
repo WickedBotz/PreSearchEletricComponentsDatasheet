@@ -2,18 +2,27 @@
   <h1 id="arduinoNano" class="text-content-title">Arduino Nano</h1>
 </header>
 
-<p>Usado em projetos que precisam ser compactos.</p>
+<p>Usado em projetos que precisam ser compactos. Segue abaixo a demonstração da placa Arduino Nano</p>
+
+<figure class="figure text-center">
+  <img data-src="./img/components/arduino-nano.jpg" src="./img/components/arduino-nano.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
+  <figcaption class="figure-caption">Demonstração da placa Arduino Nano</figcaption>
+</figure>
 
 <p class="page-paragraph">
-  O Arduino Nano é um pequeno, completo, e breadboard-friendly placa baseada no ATmega328 (Arduino Nano 3.x). Tem mais ou menos a mesma funcionalidade do Arduino Duemilanove, mas em um pacote diferente. Ele tem apenas uma tomada de alimentação CC, e funciona com um cabo USB Mini-B em vez de um padrão.
+  O Arduino Nano (<a href="https://www.arduino.cc/en/Main/ArduinoBoardNano" target="_blank">Referência do site Arduino</a> ou
+  <a href="http://blog.fazedores.com/arduino-nano-3-0/" target="_blank">Referência blog fazedores</a>) é um pequeno, completo, e
+  breadboard-friendly placa baseada no ATmega328 (Arduino Nano 3.x). Tem mais ou menos a mesma funcionalidade do Arduino Duemilanove,
+  mas em um pacote diferente. Ele tem apenas uma tomada de alimentação CC, e funciona com um cabo USB Mini-B em vez de um padrão.
 </p>
 
 <ul class="content-list">
   <li><strong>CPU:</strong> Microcontrolador Atmel Atmega 328</li>
-  <li><strong>Tensão minima de Alimentação: </strong> 3.3V</li>
+  <li><strong>Tensão minima de Alimentação:</strong> 3.3V</li>
   <li><strong>Tensão Máxima de Alimentação:</strong> 20V</li>
   <li><strong>Tensão Ideal para Alimentação:</strong> 7V – 12V</li>
-  <li><strong>Pinos Digitais I/O:</strong> 14 pinos, no qual 6 destes também servem para saídas PWM.14 pinos, no qual 6 destes também servem para saídas PWM</li>
+  <li><strong>Pinos Digitais I/O:</strong> 14 pinos, no qual 6 destes também servem para saídas PWM.14 pinos, no qual
+  6 destes também servem para saídas PWM</li>
   <li><strong>Pinos de Entrada Analógica:</strong> 8 entradas com 10 bits de resolução</li>
   <li><strong>Corrente DC Por Pino I/O:</strong> 40mA</li>
   <li><strong>Memoria Flash: </strong> 16 Kb, sendo que 2 Kb são utilizados pelo bootloader</li>
@@ -23,21 +32,23 @@
 </ul>
 
 <figure class="figure text-center">
-  <img data-src="./img/components/arduino-nano.jpg" src="./img/components/arduino-nano.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
-  <figcaption class="figure-caption">Demonstração da placa Arduino Nano</figcaption>
-</figure>
-
-<figure class="figure text-center">
   <img data-src="./img/components/arduiniNanoD.jpg" src="./img/components/arduiniNanoD.jpg" class="img-rounded" alt="Demonstração da placa Arduino UNO">
   <figcaption class="figure-caption">Datashet Arduino Nano</figcaption>
 </figure>
+
+<p class="page-paragraph">
+  Abaixo há um exemplo de código que se replica para todos as placas seguintes, cujo código fará o led da placa piscar a cada segundo.
+  Esse led é referenciado em todas as placas arduino na porta 13 digital.
+</p>
 
 
 <div id="accordion1" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy</button>
+        <button type="button" name="button" class="btn btn-warning clipboard-copy" data-target="#code1">
+          <i class="fa fa-clipboard" aria-hidden="true"></i> Copy
+        </button>
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
           Show Code Aruino
         </a>
@@ -69,11 +80,3 @@
 
   </div>
 </div>
-
-<header class="alert alert-warning">
-  <h3 id="arduinoUno2" class="text-content-title">Referencias</h3>
-</header>
-<ul class="content-list">
-  <li>  <a href="https://www.arduino.cc/en/Main/ArduinoBoardNano">https://www.arduino.cc/en/Main/ArduinoBoardNano</a>  </li>
-  <li><a href="http://blog.fazedores.com/arduino-nano-3-0/">http://blog.fazedores.com/arduino-nano-3-0/</a>   </li>
-</ul>

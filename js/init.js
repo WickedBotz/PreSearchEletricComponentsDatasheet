@@ -1,7 +1,7 @@
 /*
-  This file contains init functions, functions that executes on diferents
-  events of html document. because of this, this will be the last script wich will be
-  executed or called on html. This will need all script dependences.
+This file contains init functions, functions that executes on diferents
+events of html document. because of this, this will be the last script wich will be
+executed or called on html. This will need all script dependences.
 */
 
 
@@ -76,7 +76,7 @@ $(window).scroll(function() {
 
 
 /* Menu mobile buttom close interaction - close Menu */
-$('.menu-mb-section-container a').click(function(event) {
+$('.menu-mb-section-container a, .page-link').click(function(event) {
 
   scrollInteraction.scrollGoesInteraction(this, 1000);
   menuMb.closeMenu('#menuMb', 'menu-open');
